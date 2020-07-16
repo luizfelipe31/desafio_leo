@@ -34,9 +34,9 @@ and open the template in the editor.
             <div id="home" class="slider-area">
                 <div class="bend niceties preview-2">
                     <div id="ensign-nivoslider" class="slides">
-                        <img src="<?= theme("/assets/images/post.jpg"); ?>" alt="" title="#slider-direction-1" />
-                        <img src="<?= theme("/assets/images/slider2.jpg"); ?>" alt="" title="#slider-direction-2" />
-                        <img src="<?= theme("/assets/images/slider3.jpg"); ?>" alt="" title="#slider-direction-3" />
+                        <img src="<?= image("image/2020/07/post.jpg", 800, 250); ?>" alt="" title="#slider-direction-1" />
+                        <img src="<?= image("image/2020/07/slider1.jpg", 800, 250); ?>" alt="" title="#slider-direction-2" />
+                        <img src="<?= image("image/2020/07/slider3.jpg", 800, 250); ?>" alt="" title="#slider-direction-3" />
                     </div>
 
                     <!-- direction 1 -->
@@ -77,8 +77,8 @@ and open the template in the editor.
                     </div>
                 </div>
             </div><!-- End Slider -->
-            <section class="main_blog">
-                <header class="main_blog_header">
+            <section class="main_courses">
+                <header class="main_courses_header">
                     <h1>MEUS CURSOS</h1>
                     <hr>
                 </header>

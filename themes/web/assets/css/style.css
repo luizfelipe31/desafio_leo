@@ -6,7 +6,7 @@
     font-size: 1em;
     font-family: 'Ubuntu', sans-serif;
 }
-
+/* MAIN TOP*/
 .main_header{
     width: 100%;
     background-color: #FFFFFF;
@@ -25,7 +25,8 @@
     width: 290px;
 }
 
-.main_blog{
+/* COURSES */
+.main_courses{
     max-width: calc(1300px - 40px);
     padding: 0 20px;
     padding-bottom: 50px;
@@ -35,22 +36,22 @@
     flex-wrap: wrap;
 }
 
-.main_blog .main_blog_header{
+.main_courses .main_courses_header{
     flex-basis: 100%;
     margin: 30px 0;
 }
 
-.main_blog .main_blog_header h1{
+.main_courses .main_courses_header h1{
     color: #696969;
     margin-bottom: 5px;
     font-size: 1.4em;
 }
 
-.main_blog .main_blog_header hr{
+.main_courses .main_courses_header hr{
     opacity:0.4;
 }
 
-.main_blog article{
+.main_courses article{
     opacity: 1.0;
     flex-basis: calc(25% - 20px);
     margin-bottom: 30px;
@@ -62,18 +63,18 @@
     border: none !important;
 }
 
-.main_blog article img{
+.main_courses article img{
     width: 100%;
 }
-.main_blog article img:hover{
+.main_courses article img:hover{
     opacity: 0.7;
 }
 
-.main_blog article p{
+.main_courses article p{
     margin: 10px 0; 
 }
 
-.main_blog article .category{
+.main_courses article .category{
     font-size: 1.0em;
     color: #000000;
     font-weight: bold;
@@ -81,7 +82,7 @@
     margin-left: 15px;
 }
 
-.main_blog article button{
+.main_courses article button{
     background-color: #228B22;
     color: #FFFFFF;
     border-radius: 15px;
@@ -93,22 +94,23 @@
     margin-bottom: 20px;
 }
 
-.main_blog article button:hover{
+.main_courses article button:hover{
     background-color: #006400;
 }
 
-.main_blog article h2{
+.main_courses article h2{
     font-weight: 300;
     font-size: 1.2em;
     opacity: 0.4;
     margin-left: 15px;
 }
 
-.main_blog article h2 a{
+.main_courses article h2 a{
     color: #333;
     font-weight: 300;
 }
 
+/* MAIN FOOTER */
 .main_footer{
     max-width: 1300px;
     padding: 0px 35px ;
@@ -158,6 +160,7 @@
     text-decoration: underline;
 }
 
+/* FOOTER RIGHT */
 .main_footer_rights{
     width: 100%;
     padding: 7px 0;
@@ -173,6 +176,7 @@
     opacity: 0.7;
 }
 
+/** RESPONSIVE */
 /* 768px */
 @media (max-width: 48em){
 
@@ -188,7 +192,7 @@
 
 /* 640px */
 @media (max-width: 40em){
-    .main_blog article{
+    .main_courses article{
         flex-basis: calc(50% - 10px);
     }
 }
@@ -203,11 +207,11 @@
     .main_header .main_header_content .logo img{
         width: 100% !important;
     }
-    .main_blog article{
+    .main_courses article{
         flex-basis: 100%;
     }
 
-    .main_blog article button{
+    .main_courses article button{
         width: 100px !important;
     }
 }
