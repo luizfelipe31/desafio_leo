@@ -21,7 +21,6 @@ class LogIn extends Controller {
      * Admin access redirect
      */
     public function root(): void {
-        User::UserLog();
         
         echo $this->view->render("index",[]);
     }
