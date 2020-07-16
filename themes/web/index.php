@@ -8,15 +8,17 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" href="<?= theme("/assets/images/logo.png"); ?>"/>
-        <link rel="stylesheet" href="<?= theme("/assets/css/style.css"); ?>"/>
         <title><?= CONF_SITE_TITLE ?></title>
 
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
+        <!-- main CSS File -->
+        <link rel="stylesheet" href="<?= theme("/assets/css/style.css"); ?>"/>
+        
+        <!-- slider CSS Files -->
+        <link href="<?= theme("/assets/slider/animate.css/animate.min.css"); ?>" rel="stylesheet">
+        <link href="<?= theme("/assets/slider/font-awesome/css/font-awesome.min.css"); ?>" rel="stylesheet">
+        <link href="<?= theme("/assets/slider/nivo-slider/css/nivo-slider.css"); ?>" rel="stylesheet">
+        <link href="<?= theme("/assets/slider/owl.carousel/assets/owl.carousel.min.css"); ?>" rel="stylesheet">
+        <link href="<?= theme("/assets/slider/style.css"); ?>" rel="stylesheet">
     </head>
     <body>
 
@@ -28,41 +30,53 @@ and open the template in the editor.
             </div>
         </header>
         <main>
-
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="<?= theme("/assets/images/post.jpg"); ?>" alt="Los Angeles">
+            <!-- ======= Slider Section ======= -->
+            <div id="home" class="slider-area">
+                <div class="bend niceties preview-2">
+                    <div id="ensign-nivoslider" class="slides">
+                        <img src="<?= theme("/assets/images/post.jpg"); ?>" alt="" title="#slider-direction-1" />
+                        <img src="<?= theme("/assets/images/slider2.jpg"); ?>" alt="" title="#slider-direction-2" />
+                        <img src="<?= theme("/assets/images/slider3.jpg"); ?>" alt="" title="#slider-direction-3" />
                     </div>
 
-                    <div class="item">
-                        <img src="<?= theme("/assets/images/post.jpg"); ?>" alt="Chicago">
+                    <!-- direction 1 -->
+                    <div id="slider-direction-1" class="slider-direction slider-one">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="slider-content">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="item">
-                        <img src="<?= theme("/assets/images/post.jpg"); ?>" alt="New York">
+                    <!-- direction 2 -->
+                    <div id="slider-direction-2" class="slider-direction slider-two">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- direction 3 -->
+                    <div id="slider-direction-3" class="slider-direction slider-two">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="slider-content">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-
+            </div><!-- End Slider -->
             <section class="main_blog">
                 <header class="main_blog_header">
                     <h1>MEUS CURSOS</h1>
@@ -181,5 +195,10 @@ and open the template in the editor.
         </footer>
     </body>
 </html>
-
+<!-- slider js Files -->
+<script src="<?= theme("/assets/js/jquery/jquery.min.js"); ?>"></script>
+<script src="<?= theme("/assets/slider/wow/wow.min.js"); ?>"></script>
+<script src="<?= theme("/assets/slider/nivo-slider/js/jquery.nivo.slider.js"); ?>"></script>
+<script src="<?= theme("/assets/slider/owl.carousel/owl.carousel.min.js"); ?>"></script>
+<script src="<?= theme("/assets/slider/main.js"); ?>"></script>
 
