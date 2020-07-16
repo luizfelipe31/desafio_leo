@@ -1,0 +1,2007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>desafio_leo</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit--><script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">desafio_leo</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">                    <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">                            <li><a href="../namespaces/CoffeeCode.html">\CoffeeCode</a></li>                            <li><a href="../namespaces/Composer.html">\Composer</a></li>                            <li><a href="../namespaces/Example.html">\Example</a></li>                            <li><a href="../namespaces/ImageMimeTypeGuesser.html">\ImageMimeTypeGuesser</a></li>                            <li><a href="../namespaces/League.html">\League</a></li>                            <li><a href="../namespaces/Source.html">\Source</a></li>                            <li><a href="../namespaces/Test.html">\Test</a></li>                            <li><a href="../namespaces/WebPConvert.html">\WebPConvert</a></li>                        </ul>
+                    </li>                    <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">873</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">10</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">                                    <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">1</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">    <section class="row-fluid">
+        <div class="span2 sidebar">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-toggle" data-toggle="collapse" data-target="#namespace-885926885"></a>                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-885926885" class="accordion-body collapsein">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-381856276"></a>                <a href="../namespaces/CoffeeCode.html" style="margin-left: 30px; padding-left: 0">CoffeeCode</a>
+            </div>
+            <div id="namespace-381856276" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1021547379"></a>                <a href="../namespaces/CoffeeCode.Uploader.html" style="margin-left: 30px; padding-left: 0">Uploader</a>
+            </div>
+            <div id="namespace-1021547379" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/CoffeeCode.Uploader.File.html">File</a></li>                            <li class="class"><a href="../classes/CoffeeCode.Uploader.Media.html">Media</a></li>                            <li class="class"><a href="../classes/CoffeeCode.Uploader.Send.html">Send</a></li>                            <li class="class"><a href="../classes/CoffeeCode.Uploader.Uploader.html">Uploader</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-391879810"></a>                <a href="../namespaces/Composer.html" style="margin-left: 30px; padding-left: 0">Composer</a>
+            </div>
+            <div id="namespace-391879810" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-918409990"></a>                <a href="../namespaces/Composer.Autoload.html" style="margin-left: 30px; padding-left: 0">Autoload</a>
+            </div>
+            <div id="namespace-918409990" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Composer.Autoload.ClassLoader.html">ClassLoader</a></li>                            <li class="class"><a href="../classes/Composer.Autoload.ComposerStaticInit6fb7b337941f1bddd83caca15b07f3ce.html">ComposerStaticInit6fb7b337941f1bddd83caca15b07f3ce</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-627136627"></a>                <a href="../namespaces/Example.html" style="margin-left: 30px; padding-left: 0">Example</a>
+            </div>
+            <div id="namespace-627136627" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-800298635"></a>                <a href="../namespaces/Example.Models.html" style="margin-left: 30px; padding-left: 0">Models</a>
+            </div>
+            <div id="namespace-800298635" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Example.Models.Address.html">Address</a></li>                            <li class="class"><a href="../classes/Example.Models.User.html">User</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1389065093"></a>                <a href="../namespaces/ImageMimeTypeGuesser.html" style="margin-left: 30px; padding-left: 0">ImageMimeTypeGuesser</a>
+            </div>
+            <div id="namespace-1389065093" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1539940844"></a>                <a href="../namespaces/ImageMimeTypeGuesser.Detectors.html" style="margin-left: 30px; padding-left: 0">Detectors</a>
+            </div>
+            <div id="namespace-1539940844" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.AbstractDetector.html">AbstractDetector</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.ExifImageType.html">ExifImageType</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.FInfo.html">FInfo</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.GetImageSize.html">GetImageSize</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.MimeContentType.html">MimeContentType</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.SniffFirstFourBytes.html">SniffFirstFourBytes</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.Stack.html">Stack</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.GuessFromExtension.html">GuessFromExtension</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.ImageMimeTypeGuesser.html">ImageMimeTypeGuesser</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-188316050"></a>                <a href="../namespaces/League.html" style="margin-left: 30px; padding-left: 0">League</a>
+            </div>
+            <div id="namespace-188316050" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-146077853"></a>                <a href="../namespaces/League.Plates.html" style="margin-left: 30px; padding-left: 0">Plates</a>
+            </div>
+            <div id="namespace-146077853" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-356536614"></a>                <a href="../namespaces/League.Plates.Exception.html" style="margin-left: 30px; padding-left: 0">Exception</a>
+            </div>
+            <div id="namespace-356536614" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Exception.FuncException.html">FuncException</a></li>                            <li class="class"><a href="../classes/League.Plates.Exception.HydrateTemplateException.html">HydrateTemplateException</a></li>                            <li class="class"><a href="../classes/League.Plates.Exception.PlatesException.html">PlatesException</a></li>                            <li class="class"><a href="../classes/League.Plates.Exception.RenderTemplateException.html">RenderTemplateException</a></li>                            <li class="class"><a href="../classes/League.Plates.Exception.StackException.html">StackException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-148093400"></a>                <a href="../namespaces/League.Plates.Extension.html" style="margin-left: 30px; padding-left: 0">Extension</a>
+            </div>
+            <div id="namespace-148093400" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1878050024"></a>                <a href="../namespaces/League.Plates.Extension.Data.html" style="margin-left: 30px; padding-left: 0">Data</a>
+            </div>
+            <div id="namespace-1878050024" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Extension.Data.DataExtension.html">DataExtension</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-421365983"></a>                <a href="../namespaces/League.Plates.Extension.Folders.html" style="margin-left: 30px; padding-left: 0">Folders</a>
+            </div>
+            <div id="namespace-421365983" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Extension.Folders.FoldersExtension.html">FoldersExtension</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-399362792"></a>                <a href="../namespaces/League.Plates.Extension.LayoutSections.html" style="margin-left: 30px; padding-left: 0">LayoutSections</a>
+            </div>
+            <div id="namespace-399362792" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Extension.LayoutSections.DefaultLayoutRenderTemplate.html">DefaultLayoutRenderTemplate</a></li>                            <li class="class"><a href="../classes/League.Plates.Extension.LayoutSections.LayoutSectionsExtension.html">LayoutSectionsExtension</a></li>                            <li class="class"><a href="../classes/League.Plates.Extension.LayoutSections.Sections.html">Sections</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1676713589"></a>                <a href="../namespaces/League.Plates.Extension.Path.html" style="margin-left: 30px; padding-left: 0">Path</a>
+            </div>
+            <div id="namespace-1676713589" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Extension.Path.PathExtension.html">PathExtension</a></li>                            <li class="class"><a href="../classes/League.Plates.Extension.Path.ResolvePathArgs.html">ResolvePathArgs</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-567650326"></a>                <a href="../namespaces/League.Plates.Extension.RenderContext.html" style="margin-left: 30px; padding-left: 0">RenderContext</a>
+            </div>
+            <div id="namespace-567650326" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Extension.RenderContext.FuncArgs.html">FuncArgs</a></li>                            <li class="class"><a href="../classes/League.Plates.Extension.RenderContext.RenderContextExtension.html">RenderContextExtension</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="interface"><a href="../classes/League.Plates.Extension.ExtensionInterface.html">ExtensionInterface</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-21067902"></a>                <a href="../namespaces/League.Plates.RenderTemplate.html" style="margin-left: 30px; padding-left: 0">RenderTemplate</a>
+            </div>
+            <div id="namespace-21067902" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.RenderTemplate.FileSystemRenderTemplate.html">FileSystemRenderTemplate</a></li>                            <li class="class"><a href="../classes/League.Plates.RenderTemplate.MockRenderTemplate.html">MockRenderTemplate</a></li>                            <li class="class"><a href="../classes/League.Plates.RenderTemplate.RenderTemplateDecorator.html">RenderTemplateDecorator</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                <a href="../namespaces/League.Plates.Template.html" style="margin-left: 30px; padding-left: 0">Template</a>
+            </div>
+            <div id="namespace-1999285976" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-964636512"></a>                <a href="../namespaces/League.Plates.Util.html" style="margin-left: 30px; padding-left: 0">Util</a>
+            </div>
+            <div id="namespace-964636512" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Util.Container.html">Container</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="interface"><a href="../classes/League.Plates.Extension.html">Extension</a></li>                            <li class="interface"><a href="../classes/League.Plates.RenderTemplate.html">RenderTemplate</a></li>                            <li class="class"><a href="../classes/League.Plates.Engine.html">Engine</a></li>                            <li class="class"><a href="../classes/League.Plates.PlatesExtension.html">PlatesExtension</a></li>                            <li class="class"><a href="../classes/League.Plates.TemplateReference.html">TemplateReference</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1156809841"></a>                <a href="../namespaces/Source.html" style="margin-left: 30px; padding-left: 0">Source</a>
+            </div>
+            <div id="namespace-1156809841" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1226634245"></a>                <a href="../namespaces/Source.Core.html" style="margin-left: 30px; padding-left: 0">Core</a>
+            </div>
+            <div id="namespace-1226634245" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Source.Core.Controller.html">Controller</a></li>                            <li class="class"><a href="../classes/Source.Core.View.html">View</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-303785732"></a>                <a href="../namespaces/Source.Web.html" style="margin-left: 30px; padding-left: 0">Web</a>
+            </div>
+            <div id="namespace-303785732" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Source.Web.Web.html">Web</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-683635686"></a>                <a href="../namespaces/Test.html" style="margin-left: 30px; padding-left: 0">Test</a>
+            </div>
+            <div id="namespace-683635686" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Test.Coffee.html">Coffee</a></li>                            <li class="class"><a href="../classes/Test.Name.html">Name</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-8852711"></a>                <a href="../namespaces/WebPConvert.html" style="margin-left: 30px; padding-left: 0">WebPConvert</a>
+            </div>
+            <div id="namespace-8852711" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-2049673790"></a>                <a href="../namespaces/WebPConvert.Convert.html" style="margin-left: 30px; padding-left: 0">Convert</a>
+            </div>
+            <div id="namespace-2049673790" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-203012245"></a>                <a href="../namespaces/WebPConvert.Convert.Converters.html" style="margin-left: 30px; padding-left: 0">Converters</a>
+            </div>
+            <div id="namespace-203012245" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-253292498"></a>                <a href="../namespaces/WebPConvert.Convert.Converters.BaseTraits.html" style="margin-left: 30px; padding-left: 0">BaseTraits</a>
+            </div>
+            <div id="namespace-253292498" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.AutoQualityTrait.html">AutoQualityTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.DestinationPreparationTrait.html">DestinationPreparationTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.LoggerTrait.html">LoggerTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html">OptionsTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html">WarningLoggerTrait</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-477968791"></a>                <a href="../namespaces/WebPConvert.Convert.Converters.ConverterTraits.html" style="margin-left: 30px; padding-left: 0">ConverterTraits</a>
+            </div>
+            <div id="namespace-477968791" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.CloudConverterTrait.html">CloudConverterTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.CurlTrait.html">CurlTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.EncodingAutoTrait.html">EncodingAutoTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.ExecTrait.html">ExecTrait</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html">AbstractConverter</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Cwebp.html">Cwebp</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Ewww.html">Ewww</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Gd.html">Gd</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Gmagick.html">Gmagick</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.GmagickBinary.html">GmagickBinary</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.GraphicsMagick.html">GraphicsMagick</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.ImageMagick.html">ImageMagick</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Imagick.html">Imagick</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.ImagickBinary.html">ImagickBinary</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Stack.html">Stack</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Vips.html">Vips</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Wpc.html">Wpc</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-2004480821"></a>                <a href="../namespaces/WebPConvert.Convert.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-2004480821" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1696131423"></a>                <a href="../namespaces/WebPConvert.Convert.Exceptions.ConversionFailed.html" style="margin-left: 30px; padding-left: 0">ConversionFailed</a>
+            </div>
+            <div id="namespace-1696131423" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-537198508"></a>                <a href="../namespaces/WebPConvert.Convert.Exceptions.ConversionFailed.ConverterNotOperational.html" style="margin-left: 30px; padding-left: 0">ConverterNotOperational</a>
+            </div>
+            <div id="namespace-537198508" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.ConverterNotOperational.InvalidApiKeyException.html">InvalidApiKeyException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.ConverterNotOperational.SystemRequirementsNotMetException.html">SystemRequirementsNotMetException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-561177016"></a>                <a href="../namespaces/WebPConvert.Convert.Exceptions.ConversionFailed.FileSystemProblems.html" style="margin-left: 30px; padding-left: 0">FileSystemProblems</a>
+            </div>
+            <div id="namespace-561177016" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.FileSystemProblems.CreateDestinationFileException.html">CreateDestinationFileException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.FileSystemProblems.CreateDestinationFolderException.html">CreateDestinationFolderException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1324898760"></a>                <a href="../namespaces/WebPConvert.Convert.Exceptions.ConversionFailed.InvalidInput.html" style="margin-left: 30px; padding-left: 0">InvalidInput</a>
+            </div>
+            <div id="namespace-1324898760" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.InvalidInput.ConverterNotFoundException.html">ConverterNotFoundException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.InvalidInput.InvalidImageTypeException.html">InvalidImageTypeException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.InvalidInput.TargetNotFoundException.html">TargetNotFoundException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.ConversionSkippedException.html">ConversionSkippedException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.ConverterNotOperationalException.html">ConverterNotOperationalException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.FileSystemProblemsException.html">FileSystemProblemsException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.InvalidInputException.html">InvalidInputException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailedException.html">ConversionFailedException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1783770409"></a>                <a href="../namespaces/WebPConvert.Convert.Helpers.html" style="margin-left: 30px; padding-left: 0">Helpers</a>
+            </div>
+            <div id="namespace-1783770409" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Helpers.JpegQualityDetector.html">JpegQualityDetector</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Helpers.PhpIniSizes.html">PhpIniSizes</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.ConverterFactory.html">ConverterFactory</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-46585081"></a>                <a href="../namespaces/WebPConvert.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-46585081" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1650479034"></a>                <a href="../namespaces/WebPConvert.Exceptions.InvalidInput.html" style="margin-left: 30px; padding-left: 0">InvalidInput</a>
+            </div>
+            <div id="namespace-1650479034" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Exceptions.InvalidInput.InvalidImageTypeException.html">InvalidImageTypeException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Exceptions.InvalidInput.TargetNotFoundException.html">TargetNotFoundException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Exceptions.InvalidInputException.html">InvalidInputException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Exceptions.WebPConvertException.html">WebPConvertException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-749266373"></a>                <a href="../namespaces/WebPConvert.Helpers.html" style="margin-left: 30px; padding-left: 0">Helpers</a>
+            </div>
+            <div id="namespace-749266373" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Helpers.BinaryDiscovery.html">BinaryDiscovery</a></li>                            <li class="class"><a href="../classes/WebPConvert.Helpers.FileExists.html">FileExists</a></li>                            <li class="class"><a href="../classes/WebPConvert.Helpers.InputValidator.html">InputValidator</a></li>                            <li class="class"><a href="../classes/WebPConvert.Helpers.MimeType.html">MimeType</a></li>                            <li class="class"><a href="../classes/WebPConvert.Helpers.PathChecker.html">PathChecker</a></li>                            <li class="class"><a href="../classes/WebPConvert.Helpers.Sanitize.html">Sanitize</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-704787753"></a>                <a href="../namespaces/WebPConvert.Loggers.html" style="margin-left: 30px; padding-left: 0">Loggers</a>
+            </div>
+            <div id="namespace-704787753" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Loggers.BaseLogger.html">BaseLogger</a></li>                            <li class="class"><a href="../classes/WebPConvert.Loggers.BufferLogger.html">BufferLogger</a></li>                            <li class="class"><a href="../classes/WebPConvert.Loggers.EchoLogger.html">EchoLogger</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-320187490"></a>                <a href="../namespaces/WebPConvert.Options.html" style="margin-left: 30px; padding-left: 0">Options</a>
+            </div>
+            <div id="namespace-320187490" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-2017718630"></a>                <a href="../namespaces/WebPConvert.Options.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-2017718630" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Options.Exceptions.InvalidOptionTypeException.html">InvalidOptionTypeException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.Exceptions.InvalidOptionValueException.html">InvalidOptionValueException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.Exceptions.OptionNotFoundException.html">OptionNotFoundException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Options.ArrayOption.html">ArrayOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.BooleanOption.html">BooleanOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.GhostOption.html">GhostOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.IntegerOption.html">IntegerOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.IntegerOrNullOption.html">IntegerOrNullOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.MetadataOption.html">MetadataOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.Option.html">Option</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.Options.html">Options</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.QualityOption.html">QualityOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.SensitiveArrayOption.html">SensitiveArrayOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.SensitiveStringOption.html">SensitiveStringOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.StringOption.html">StringOption</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-332869602"></a>                <a href="../namespaces/WebPConvert.Serve.html" style="margin-left: 30px; padding-left: 0">Serve</a>
+            </div>
+            <div id="namespace-332869602" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-272509652"></a>                <a href="../namespaces/WebPConvert.Serve.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-272509652" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Serve.Exceptions.ServeFailedException.html">ServeFailedException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Serve.Header.html">Header</a></li>                            <li class="class"><a href="../classes/WebPConvert.Serve.Report.html">Report</a></li>                            <li class="class"><a href="../classes/WebPConvert.Serve.ServeConvertedWebP.html">ServeConvertedWebP</a></li>                            <li class="class"><a href="../classes/WebPConvert.Serve.ServeConvertedWebPWithErrorHandling.html">ServeConvertedWebPWithErrorHandling</a></li>                            <li class="class"><a href="../classes/WebPConvert.Serve.ServeFile.html">ServeFile</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.WebPConvert.html">WebPConvert</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/ComposerAutoloaderInit6fb7b337941f1bddd83caca15b07f3ce.html">ComposerAutoloaderInit6fb7b337941f1bddd83caca15b07f3ce</a></li>                            <li class="class"><a href="../classes/DocsConfig.html">DocsConfig</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav><a href="../namespaces/WebPConvert.Convert.Converters.html">\WebPConvert\Convert\Converters</a> <i class="icon-level-up"></i>                    </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\WebPConvert\Convert\Converters</small>ImageMagick</h1>
+                    <p><em>Convert images to webp by calling imagemagick binary.</em></p>                    
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.LoggerTrait.html#method_logLn" class="">logLn()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.ExecTrait.html#method_checkOperationalityExecTrait" class="">checkOperationalityExecTrait()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html#method_getSource" class="">getSource()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.DestinationPreparationTrait.html#method_getDestination" class="">getDestination()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html#method_setDestination" class="">setDestination()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html#method_getOptions" class="">getOptions()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.LoggerTrait.html#method_log" class="">log()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html#method_supportsLossless" class="">supportsLossless()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.EncodingAutoTrait.html#method_passOnEncodingAuto" class="">passOnEncodingAuto()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.ImageMagick.html#method_checkOperationality" class="">checkOperationality()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html#method_checkConvertability" class="">checkConvertability()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html#method___construct" class="">__construct()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html#method_createInstance" class="">createInstance()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html#method_doConvert" class="">doConvert()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html#method_convert" class="">convert()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.AutoQualityTrait.html#method_isQualityDetectionRequiredButFailing" class="">isQualityDetectionRequiredButFailing()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.AutoQualityTrait.html#method_getCalculatedQuality" class="">getCalculatedQuality()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html#method_setProvidedOptions" class="">setProvidedOptions()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html#method_logOptions" class="">logOptions()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html#method_warningHandler" class="">warningHandler()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.LoggerTrait.html#method_setLogger" class="">setLogger()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.ImageMagick.html#method_isInstalled" class="">isInstalled()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.ImageMagick.html#method_isWebPDelegateInstalled" class="">isWebPDelegateInstalled()</a><br />                            </section>
+                            <section class="span4">                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html#property_providedOptions" class="">$providedOptions</a><br />                            </section>
+                            <section class="span4">                                    <em>No constants found</em>                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">                                    <a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.ExecTrait.html#method_hasNiceSupport" class="">hasNiceSupport()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.ExecTrait.html#method_logExecOutput" class="">logExecOutput()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.ImageMagick.html#method_doActualConvert" class="">doActualConvert()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html#method_setOption" class="">setOption()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.LoggerTrait.html#method_ln" class="">ln()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html#method_logReduction" class="">logReduction()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html#method_runActualConvert" class="">runActualConvert()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html#method_getConverterDisplayName" class="">getConverterDisplayName()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html#method_getConverterId" class="">getConverterId()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html#method_getMimeTypeOfSource" class="">getMimeTypeOfSource()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html#method_createOptions" class="">createOptions()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html#method_checkOptions" class="">checkOptions()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.ImageMagick.html#method_getUnsupportedDefaultOptions" class="">getUnsupportedDefaultOptions()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html#method_activateWarningLogger" class="">activateWarningLogger()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html#method_deactivateWarningLogger" class="">deactivateWarningLogger()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html#method_disableWarningsTemporarily" class="">disableWarningsTemporarily()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html#method_reenableWarnings" class="">reenableWarnings()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html#method_getWarningCount" class="">getWarningCount()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html#method_resetWarningCount" class="">resetWarningCount()</a><br />                            </section>
+                            <section class="span4">                                    <a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html#property_source" class="">$source</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html#property_destination" class="">$destination</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html#property_options" class="">$options</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html#property_options2" class="">$options2</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.LoggerTrait.html#property_logger" class="">$logger</a><br />                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">                                    <a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.EncodingAutoTrait.html#method_convertTwoAndSelectSmallest" class="">convertTwoAndSelectSmallest()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html#method_doConvertImplementation" class="">doConvertImplementation()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.AutoQualityTrait.html#method_processQualityOptionIfNotAlready" class="">processQualityOptionIfNotAlready()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.AutoQualityTrait.html#method_processQualityOption" class="">processQualityOption()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.DestinationPreparationTrait.html#method_createWritableDestinationFolder" class="">createWritableDestinationFolder()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.DestinationPreparationTrait.html#method_checkDestinationWritable" class="">checkDestinationWritable()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.DestinationPreparationTrait.html#method_removeExistingDestinationIfExists" class="">removeExistingDestinationIfExists()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.ImageMagick.html#method_getPath" class="">getPath()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.ImageMagick.html#method_getVersion" class="">getVersion()</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.ImageMagick.html#method_createCommandLineOptions" class="">createCommandLineOptions()</a><br />                            </section>
+                            <section class="span4">                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.AutoQualityTrait.html#property_processed" class="">$processed</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.AutoQualityTrait.html#property_qualityCouldNotBeDetected" class="">$qualityCouldNotBeDetected</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.AutoQualityTrait.html#property_calculatedQuality" class="">$calculatedQuality</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html#property_previousErrorHandler" class="">$previousErrorHandler</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html#property_suppressWarnings" class="">$suppressWarnings</a><br />                                    <a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html#property_warningCounter" class="">$warningCounter</a><br />                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/vendor.rosell-dk.webp-convert.src.Convert.Converters.ImageMagick.html"><div class="path-wrapper">vendor\rosell-dk\webp-convert\src\Convert\Converters\ImageMagick.php</div></a></dd>                        <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">WebPConvert</div></dd>                        <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                        <div class="namespace-wrapper"><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html">\WebPConvert\Convert\Converters\AbstractConverter</a></div>                                <div class="namespace-wrapper">\WebPConvert\Convert\Converters\ImageMagick</div>
+                            </dd>                                <dt>Uses traits</dt>                            <dd><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.ExecTrait.html">                                    <div class="namespace-wrapper">\WebPConvert\Convert\Converters\ConverterTraits\ExecTrait</div></a>                            </dd>                            <dd><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.EncodingAutoTrait.html">                                    <div class="namespace-wrapper">\WebPConvert\Convert\Converters\ConverterTraits\EncodingAutoTrait</div></a>                            </dd>                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">                        <tr>
+                            <th>author
+                            </th>
+                            <td><p>Bjørn Rosell <a href="mailto:it@rosell.dk">it@rosell.dk</a></p>                            </td>
+                        </tr>                        <tr>
+                            <th>since
+                            </th>
+                            <td><p>Class available since Release 2.0.0</p>                            </td>
+                        </tr>                    </table>
+                </aside>
+            </div>            <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_providedOptions" name="property_providedOptions" class="anchor"></a>
+            <article class="property">
+                <h3 class="public">$providedOptions</h3>
+                <pre class="signature">$providedOptions :array</pre>
+                <p><em></em></p>                <h4>Type</h4>array&mdash;Provided conversion options            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\OptionsTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_source" name="property_source" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$source</h3>
+                <pre class="signature">$source :string</pre>
+                <p><em></em></p>                <h4>Type</h4>string&mdash;The filename of the image to convert (complete path)            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\AbstractConverter</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_destination" name="property_destination" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$destination</h3>
+                <pre class="signature">$destination :string</pre>
+                <p><em></em></p>                <h4>Type</h4>string&mdash;Where to save the webp (complete path)            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\AbstractConverter</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_options" name="property_options" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$options</h3>
+                <pre class="signature">$options :array</pre>
+                <p><em></em></p>                <h4>Type</h4>array&mdash;Calculated conversion options (merge of default options and provided options)            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\OptionsTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_options2" name="property_options2" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$options2</h3>
+                <pre class="signature">$options2 :\WebPConvert\Options\Options</pre>
+                <p><em></em></p>                <h4>Type</h4><a href="../classes/WebPConvert.Options.Options.html">\WebPConvert\Options\Options</a>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\OptionsTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_logger" name="property_logger" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$logger</h3>
+                <pre class="signature">$logger :\WebPConvert\Loggers\BaseLogger</pre>
+                <p><em></em></p>                <h4>Type</h4><a href="../classes/WebPConvert.Loggers.BaseLogger.html">\WebPConvert\Loggers\BaseLogger</a>&mdash;The logger (or null if not set)            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.LoggerTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\LoggerTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_processed" name="property_processed" class="anchor"></a>
+            <article class="property">
+                <h3 class="private">$processed</h3>
+                <pre class="signature">$processed :boolean</pre>
+                <p><em></em></p>                <h4>Type</h4>boolean&mdash;Whether the quality option has been processed or not            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.AutoQualityTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\AutoQualityTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_qualityCouldNotBeDetected" name="property_qualityCouldNotBeDetected" class="anchor"></a>
+            <article class="property">
+                <h3 class="private">$qualityCouldNotBeDetected</h3>
+                <pre class="signature">$qualityCouldNotBeDetected :boolean</pre>
+                <p><em></em></p>                <h4>Type</h4>boolean&mdash;Whether the quality of the source could be detected or not (set upon processing)            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.AutoQualityTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\AutoQualityTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_calculatedQuality" name="property_calculatedQuality" class="anchor"></a>
+            <article class="property">
+                <h3 class="private">$calculatedQuality</h3>
+                <pre class="signature">$calculatedQuality :integer</pre>
+                <p><em></em></p>                <h4>Type</h4>integer&mdash;The calculated quality (set upon processing - on successful detection)            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.AutoQualityTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\AutoQualityTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_previousErrorHandler" name="property_previousErrorHandler" class="anchor"></a>
+            <article class="property">
+                <h3 class="private">$previousErrorHandler</h3>
+                <pre class="signature">$previousErrorHandler :string|array|null</pre>
+                <p><em></em></p>                <h4>Type</h4>string|array|null&mdash;Previous error handler (stored in order to be able pass warnings on)            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\WarningLoggerTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_suppressWarnings" name="property_suppressWarnings" class="anchor"></a>
+            <article class="property">
+                <h3 class="private">$suppressWarnings</h3>
+                <pre class="signature">$suppressWarnings :boolean</pre>
+                <p><em></em></p>                <h4>Type</h4>boolean&mdash;Suppress ALL warnings? (both from log and from bubbling up)            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\WarningLoggerTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_warningCounter" name="property_warningCounter" class="anchor"></a>
+            <article class="property">
+                <h3 class="private">$warningCounter</h3>
+                <pre class="signature">$warningCounter :integer</pre>
+                <p><em></em></p>                <h4>Type</h4>integer&mdash;Count number of warnings            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\WarningLoggerTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>            <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_logLn" name="method_logLn" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">logLn()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">logLn(string  <span class="argument">$msg</span>,string  <span class="argument">$style = &#039;&#039;</span>): void</pre>
+                <p><em>Write a line to the logger.</em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td>string</td>
+                                <td>$msg</td>
+                                <td><p>The line to write.</p></td>
+                            </tr>                            <tr>
+                                <td>string</td>
+                                <td>$style</td>
+                                <td><p>(optional) Ie &quot;italic&quot; or &quot;bold&quot;</p></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.LoggerTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\LoggerTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_checkOperationalityExecTrait" name="method_checkOperationalityExecTrait" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">checkOperationalityExecTrait()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">checkOperationalityExecTrait(): void</pre>
+                <p><em>Check basic operationality of exec converters (that the &quot;exec&quot; function is available)</em></p>                    <h4>Throws</h4>
+                    <dl>                            <dt>\WebPConvert\Convert\Converters\ConverterTraits\WebPConvert\Convert\Exceptions\ConversionFailed\ConverterNotOperational\SystemRequirementsNotMetException</dt>
+                            <dd></dd>                    </dl>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.ExecTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\ConverterTraits\ExecTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getSource" name="method_getSource" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">getSource()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getSource(): string</pre>
+                <p><em>Get source.</em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+                    <h4>Returns</h4>string                        &mdash;<p>The source.</p>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\AbstractConverter</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDestination" name="method_getDestination" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">getDestination()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDestination()</pre>
+                <p><em></em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>                <span class="label label-info">abstract</span>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.DestinationPreparationTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\DestinationPreparationTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setDestination" name="method_setDestination" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">setDestination()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setDestination(string  <span class="argument">$destination</span>): void</pre>
+                <p><em>Set destination.</em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td>string</td>
+                                <td>$destination</td>
+                                <td><p>path to destination</p></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\AbstractConverter</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getOptions" name="method_getOptions" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">getOptions()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getOptions(): array</pre>
+                <p><em>Get the resulting options after merging provided options with default options.</em></p><p>Note that the defaults depends on the mime type of the source. For example, the default value for quality
+is &quot;auto&quot; for jpegs, and 85 for pngs.</p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+                    <h4>Returns</h4>array                        &mdash;<p>An associative array of options: ['metadata' =&gt; 'none', ...]</p>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\OptionsTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_log" name="method_log" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">log()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">log(string  <span class="argument">$msg</span>,string  <span class="argument">$style = &#039;&#039;</span>): void</pre>
+                <p><em>Write to the logger, without newline</em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td>string</td>
+                                <td>$msg</td>
+                                <td><p>What to write.</p></td>
+                            </tr>                            <tr>
+                                <td>string</td>
+                                <td>$style</td>
+                                <td><p>(optional) Ie &quot;italic&quot; or &quot;bold&quot;</p></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.LoggerTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\LoggerTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_supportsLossless" name="method_supportsLossless" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">supportsLossless()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">supportsLossless(): boolean</pre>
+                <p><em>Whether or not the converter supports lossless encoding (even for jpegs)</em></p><p>PS: Converters that supports lossless encoding all use the EncodingAutoTrait, which
+overrides this function.</p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+                    <h4>Returns</h4>boolean                        &mdash;<p>Whether the converter supports lossless encoding (even for jpegs).</p>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\AbstractConverter</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_passOnEncodingAuto" name="method_passOnEncodingAuto" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">passOnEncodingAuto()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">passOnEncodingAuto()</pre>
+                <p><em>Default is to not pass &quot;lossless:auto&quot; on, but implement it.</em></p><p>The Stack converter passes it on (it does not even use this trait)
+WPC currently implements it, but this might be configurable in the future.</p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.EncodingAutoTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\ConverterTraits\EncodingAutoTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_checkOperationality" name="method_checkOperationality" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">checkOperationality()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">checkOperationality(): void</pre>
+                <p><em>Check (general) operationality of imagack converter executable</em></p><p>Converters may override this method for the purpose of performing basic operationaly checks. It is for
+running general operation checks for a conversion method.
+If some requirement is not met, it should throw a ConverterNotOperationalException (or subtype)</p>
+<p>The method is called internally right before calling doActualConvert() method.</p>
+<ul>
+<li>It SHOULD take options into account when relevant. For example, a missing api key for a
+cloud converter should be detected here</li>
+<li>It should NOT take the actual filename into consideration, as the purpose is <em>general</em>
+For that pupose, converters should override checkConvertability
+Also note that doConvert method is allowed to throw ConverterNotOperationalException too.</li>
+</ul>                    <h4>Throws</h4>
+                    <dl>                            <dt>\WebPConvert\Convert\Exceptions\ConversionFailed\ConverterNotOperational\SystemRequirementsNotMetException</dt>
+                            <dd><p>if system requirements are not met</p></dd>                    </dl>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_checkConvertability" name="method_checkConvertability" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">checkConvertability()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">checkConvertability(): void</pre>
+                <p><em>Converters may override this for the purpose of performing checks on the concrete file.</em></p><p>This can for example be used for rejecting big uploads in cloud converters or rejecting unsupported
+image types.</p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\AbstractConverter</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(string  <span class="argument">$source</span>,string  <span class="argument">$destination</span>,array  <span class="argument">$options = array()</span>,\WebPConvert\Loggers\BaseLogger  <span class="argument">$logger = null</span>)</pre>
+                <p><em>Constructor.</em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td>string</td>
+                                <td>$source</td>
+                                <td><p>path to source file</p></td>
+                            </tr>                            <tr>
+                                <td>string</td>
+                                <td>$destination</td>
+                                <td><p>path to destination</p></td>
+                            </tr>                            <tr>
+                                <td>array</td>
+                                <td>$options</td>
+                                <td><p>(optional)  options for conversion</p></td>
+                            </tr>                            <tr>
+                                <td><a href="../classes/WebPConvert.Loggers.BaseLogger.html">\WebPConvert\Loggers\BaseLogger</a></td>
+                                <td>$logger</td>
+                                <td><p>(optional)</p></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>                <span class="label label-info">final</span>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\AbstractConverter</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_createInstance" name="method_createInstance" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">createInstance()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">createInstance(string  <span class="argument">$source</span>,string  <span class="argument">$destination</span>,array  <span class="argument">$options = array()</span>,\WebPConvert\Loggers\BaseLogger  <span class="argument">$logger = null</span>): static</pre>
+                <p><em>Create an instance of this class</em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td>string</td>
+                                <td>$source</td>
+                                <td><p>The path to the file to convert</p></td>
+                            </tr>                            <tr>
+                                <td>string</td>
+                                <td>$destination</td>
+                                <td><p>The path to save the converted file to</p></td>
+                            </tr>                            <tr>
+                                <td>array</td>
+                                <td>$options</td>
+                                <td><p>(optional)</p></td>
+                            </tr>                            <tr>
+                                <td><a href="../classes/WebPConvert.Loggers.BaseLogger.html">\WebPConvert\Loggers\BaseLogger</a></td>
+                                <td>$logger</td>
+                                <td><p>(optional)</p></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+                    <h4>Returns</h4>static            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>                <span class="label label-info">static</span>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\AbstractConverter</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_doConvert" name="method_doConvert" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">doConvert()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">doConvert(): void</pre>
+                <p><em>Start conversion.</em></p><p>Usually you would rather call the static convert method, but alternatively you can call
+call ::createInstance to get an instance and then ::doConvert().</p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\AbstractConverter</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_convert" name="method_convert" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">convert()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">convert(string  <span class="argument">$source</span>,string  <span class="argument">$destination</span>,array  <span class="argument">$options = array()</span>,\WebPConvert\Loggers\BaseLogger  <span class="argument">$logger = null</span>): void</pre>
+                <p><em>Convert an image to webp.</em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td>string</td>
+                                <td>$source</td>
+                                <td><p>path to source file</p></td>
+                            </tr>                            <tr>
+                                <td>string</td>
+                                <td>$destination</td>
+                                <td><p>path to destination</p></td>
+                            </tr>                            <tr>
+                                <td>array</td>
+                                <td>$options</td>
+                                <td><p>(optional)  options for conversion</p></td>
+                            </tr>                            <tr>
+                                <td><a href="../classes/WebPConvert.Loggers.BaseLogger.html">\WebPConvert\Loggers\BaseLogger</a></td>
+                                <td>$logger</td>
+                                <td><p>(optional)</p></td>
+                            </tr>                    </table>                    <h4>Throws</h4>
+                    <dl>                            <dt>\WebPConvert\Convert\Exceptions\ConversionFailedException</dt>
+                            <dd><p>in case conversion fails in an antipiciated way</p></dd>                            <dt>\Exception</dt>
+                            <dd><p>in case conversion fails in an unantipiciated way</p></dd>                    </dl>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>                <span class="label label-info">static</span>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\AbstractConverter</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_isQualityDetectionRequiredButFailing" name="method_isQualityDetectionRequiredButFailing" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">isQualityDetectionRequiredButFailing()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">isQualityDetectionRequiredButFailing(): boolean</pre>
+                <p><em>Determine if quality detection is required but failing.</em></p><p>It is considered &quot;required&quot; when:</p>
+<ul>
+<li>Mime type is &quot;image/jpeg&quot;</li>
+<li>
+<p>Quality is set to &quot;auto&quot;</p>
+<p>If quality option hasn't been proccessed yet, it is triggered.</p>
+</li>
+</ul>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+                    <h4>Returns</h4>boolean            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.AutoQualityTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\AutoQualityTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getCalculatedQuality" name="method_getCalculatedQuality" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">getCalculatedQuality()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getCalculatedQuality(): integer</pre>
+                <p><em>Get calculated quality.</em></p><p>If the &quot;quality&quot; option is a number, that number is returned.
+If mime type of source is something else than &quot;image/jpeg&quot;, the &quot;default-quality&quot; option is returned
+If quality is &quot;auto&quot; and source is a jpeg image, it will be attempted to detect jpeg quality.
+In case of failure, the value of the &quot;default-quality&quot; option is returned.
+In case of success, the detected quality is returned, or the value of the &quot;max-quality&quot; if that is lower.</p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+                    <h4>Returns</h4>integer            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.AutoQualityTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\AutoQualityTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setProvidedOptions" name="method_setProvidedOptions" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">setProvidedOptions()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setProvidedOptions(array  <span class="argument">$providedOptions = array()</span>): void</pre>
+                <p><em>Set &quot;provided options&quot; (options provided by the user when calling convert().</em></p><p>This also calculates the protected options array, by merging in the default options, merging
+jpeg and png options and merging prefixed options (such as 'vips-quality').
+The resulting options array are set in the protected property $this-&gt;options and can be
+retrieved using the public ::getOptions() function.</p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td>array</td>
+                                <td>$providedOptions</td>
+                                <td><p>(optional)</p></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\OptionsTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_logOptions" name="method_logOptions" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">logOptions()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">logOptions()</pre>
+                <p><em></em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\OptionsTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_warningHandler" name="method_warningHandler" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">warningHandler()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">warningHandler(integer  <span class="argument">$errno</span>,  <span class="argument">$errstr</span>,  <span class="argument">$errfile</span>,  <span class="argument">$errline</span>)</pre>
+                <p><em>Handle warnings and notices during conversion by logging them and passing them on.</em></p><p>The function is a callback used with &quot;set_error_handler&quot;.
+It is declared public because it needs to be accessible from the point where the warning is triggered.</p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td>integer</td>
+                                <td>$errno</td>
+                                <td><p>@param  string   $errstr
+@param  string   $errfile
+@param  integer  $errline</p>
+<p>@return false|null|void</p></td>
+                            </tr>                            <tr>
+                                <td></td>
+                                <td>$errstr</td>
+                                <td></td>
+                            </tr>                            <tr>
+                                <td></td>
+                                <td>$errfile</td>
+                                <td></td>
+                            </tr>                            <tr>
+                                <td></td>
+                                <td>$errline</td>
+                                <td></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\WarningLoggerTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setLogger" name="method_setLogger" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">setLogger()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setLogger(\WebPConvert\Loggers\BaseLogger  <span class="argument">$logger = null</span>): void</pre>
+                <p><em>Set logger</em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td><a href="../classes/WebPConvert.Loggers.BaseLogger.html">\WebPConvert\Loggers\BaseLogger</a></td>
+                                <td>$logger</td>
+                                <td><p>(optional)  $logger</p></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.LoggerTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\LoggerTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_isInstalled" name="method_isInstalled" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">isInstalled()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">isInstalled()</pre>
+                <p><em></em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_isWebPDelegateInstalled" name="method_isWebPDelegateInstalled" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">isWebPDelegateInstalled()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">isWebPDelegateInstalled()</pre>
+                <p><em></em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_hasNiceSupport" name="method_hasNiceSupport" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">hasNiceSupport()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">hasNiceSupport(): boolean</pre>
+                <p><em>Helper function for examining if &quot;nice&quot; command is available</em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+                    <h4>Returns</h4>boolean                        &mdash;<p>true if nice is available</p>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>                <span class="label label-info">static</span>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.ExecTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\ConverterTraits\ExecTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_logExecOutput" name="method_logExecOutput" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">logExecOutput()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">logExecOutput(array  <span class="argument">$output</span>): void</pre>
+                <p><em>Logs output from the exec call.</em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td>array</td>
+                                <td>$output</td>
+                                <td></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.ExecTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\ConverterTraits\ExecTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_doActualConvert" name="method_doActualConvert" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">doActualConvert()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">doActualConvert()</pre>
+                <p><em>The actual conversion is be done by a concrete converter extending this class.</em></p><p>At the stage this method is called, the abstract converter has taken preparational steps.</p>
+<ul>
+<li>It has created the destination folder (if neccesary)</li>
+<li>It has checked the input (valid mime type)</li>
+<li>It has set up an error handler, mostly in order to catch and log warnings during the doConvert fase</li>
+</ul>
+<p>Note: This method is not meant to be called from the outside. Use the static <em>convert</em> method for converting
+or, if you wish, create an instance with ::createInstance() and then call ::doConvert()</p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setOption" name="method_setOption" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">setOption()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setOption(string  <span class="argument">$id</span>,mixed  <span class="argument">$value</span>): void</pre>
+                <p><em>Change an option specifically.</em></p><p>This method is probably rarely neeeded. We are using it to change the &quot;encoding&quot; option temporarily
+in the EncodingAutoTrait.</p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td>string</td>
+                                <td>$id</td>
+                                <td><p>Id of option (ie &quot;metadata&quot;)</p></td>
+                            </tr>                            <tr>
+                                <td>mixed</td>
+                                <td>$value</td>
+                                <td><p>The new value.</p></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\OptionsTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ln" name="method_ln" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">ln()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ln(): void</pre>
+                <p><em>New line</em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.LoggerTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\LoggerTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_logReduction" name="method_logReduction" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">logReduction()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">logReduction(  <span class="argument">$source</span>,  <span class="argument">$destination</span>)</pre>
+                <p><em></em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td></td>
+                                <td>$source</td>
+                                <td></td>
+                            </tr>                            <tr>
+                                <td></td>
+                                <td>$destination</td>
+                                <td></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\AbstractConverter</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_runActualConvert" name="method_runActualConvert" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">runActualConvert()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">runActualConvert(): void</pre>
+                <p><em>Runs the actual conversion (after setup and checks)
+Simply calls the doActualConvert() of the actual converter.</em></p><p>However, in the EncodingAutoTrait, this method is overridden to make two conversions
+and select the smallest.</p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\AbstractConverter</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getConverterDisplayName" name="method_getConverterDisplayName" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">getConverterDisplayName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getConverterDisplayName(): string</pre>
+                <p><em>Get converter name for display (defaults to the class name (short)).</em></p><p>Converters can override this.</p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+                    <h4>Returns</h4>string                        &mdash;<p>A display name, ie &quot;Gd&quot;</p>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>                <span class="label label-info">static</span>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\AbstractConverter</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getConverterId" name="method_getConverterId" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">getConverterId()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getConverterId(): string</pre>
+                <p><em>Get converter id (defaults to the class name lowercased)</em></p><p>Converters can override this.</p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+                    <h4>Returns</h4>string                        &mdash;<p>A display name, ie &quot;Gd&quot;</p>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>                <span class="label label-info">static</span>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\AbstractConverter</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMimeTypeOfSource" name="method_getMimeTypeOfSource" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">getMimeTypeOfSource()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMimeTypeOfSource()</pre>
+                <p><em></em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>                <span class="label label-info">abstract</span>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\OptionsTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_createOptions" name="method_createOptions" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">createOptions()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">createOptions(): void</pre>
+                <p><em>Create options.</em></p><p>The options created here will be available to all converters.
+Individual converters may add options by overriding this method.</p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\OptionsTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_checkOptions" name="method_checkOptions" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">checkOptions()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">checkOptions()</pre>
+                <p><em>Check options.</em></p><p>@throws InvalidOptionTypeException   if an option have wrong type</p>                    <h4>Throws</h4>
+                    <dl>                            <dt>\WebPConvert\Options\Exceptions\InvalidOptionValueException</dt>
+                            <dd><p>if an option value is out of range
+@throws ConversionSkippedException   if 'skip' option is set to true
+@return void</p></dd>                    </dl>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\OptionsTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getUnsupportedDefaultOptions" name="method_getUnsupportedDefaultOptions" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">getUnsupportedDefaultOptions()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getUnsupportedDefaultOptions()</pre>
+                <p><em></em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_activateWarningLogger" name="method_activateWarningLogger" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">activateWarningLogger()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">activateWarningLogger(): void</pre>
+                <p><em>Activate warning logger.</em></p><p>Sets the error handler and stores the previous so our error handler can bubble up warnings</p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\WarningLoggerTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_deactivateWarningLogger" name="method_deactivateWarningLogger" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">deactivateWarningLogger()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">deactivateWarningLogger(): void</pre>
+                <p><em>Deactivate warning logger.</em></p><p>Restores the previous error handler.</p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\WarningLoggerTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_disableWarningsTemporarily" name="method_disableWarningsTemporarily" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">disableWarningsTemporarily()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">disableWarningsTemporarily()</pre>
+                <p><em></em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\WarningLoggerTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_reenableWarnings" name="method_reenableWarnings" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">reenableWarnings()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">reenableWarnings()</pre>
+                <p><em></em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\WarningLoggerTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getWarningCount" name="method_getWarningCount" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">getWarningCount()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getWarningCount()</pre>
+                <p><em></em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\WarningLoggerTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_resetWarningCount" name="method_resetWarningCount" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">resetWarningCount()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">resetWarningCount()</pre>
+                <p><em></em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\WarningLoggerTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_convertTwoAndSelectSmallest" name="method_convertTwoAndSelectSmallest" class="anchor"></a>
+            <article class="method">
+                <h3 class="private">convertTwoAndSelectSmallest()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">convertTwoAndSelectSmallest()</pre>
+                <p><em></em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.EncodingAutoTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\ConverterTraits\EncodingAutoTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_doConvertImplementation" name="method_doConvertImplementation" class="anchor"></a>
+            <article class="method">
+                <h3 class="private">doConvertImplementation()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">doConvertImplementation(): void</pre>
+                <p><em>Run conversion.</em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\AbstractConverter</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_processQualityOptionIfNotAlready" name="method_processQualityOptionIfNotAlready" class="anchor"></a>
+            <article class="method">
+                <h3 class="private">processQualityOptionIfNotAlready()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">processQualityOptionIfNotAlready(): void</pre>
+                <p><em>Process the quality option if it is not already processed.</em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.AutoQualityTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\AutoQualityTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_processQualityOption" name="method_processQualityOption" class="anchor"></a>
+            <article class="method">
+                <h3 class="private">processQualityOption()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">processQualityOption(): void</pre>
+                <p><em>Process the quality option.</em></p><p>Sets the private property &quot;calculatedQuality&quot; according to the description for the getCalculatedQuality
+function.
+In case quality detection was attempted and failed, the private property &quot;qualityCouldNotBeDetected&quot; is set
+to true. This is used by the &quot;isQualityDetectionRequiredButFailing&quot; (and documented there too).</p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.AutoQualityTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\AutoQualityTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_createWritableDestinationFolder" name="method_createWritableDestinationFolder" class="anchor"></a>
+            <article class="method">
+                <h3 class="private">createWritableDestinationFolder()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">createWritableDestinationFolder(): void</pre>
+                <p><em>Create writable folder in provided path (if it does not exist already)</em></p>                    <h4>Throws</h4>
+                    <dl>                            <dt>\WebPConvert\Convert\Exceptions\ConversionFailed\FileSystemProblems\CreateDestinationFolderException</dt>
+                            <dd><p>if folder cannot be removed</p></dd>                    </dl>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.DestinationPreparationTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\DestinationPreparationTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_checkDestinationWritable" name="method_checkDestinationWritable" class="anchor"></a>
+            <article class="method">
+                <h3 class="private">checkDestinationWritable()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">checkDestinationWritable(): void</pre>
+                <p><em>Check that we can write file at destination.</em></p><p>It is assumed that the folder already exists (that ::createWritableDestinationFolder() was called first)</p>                    <h4>Throws</h4>
+                    <dl>                            <dt>\WebPConvert\Convert\Exceptions\ConversionFailed\FileSystemProblems\CreateDestinationFileException</dt>
+                            <dd><p>if file cannot be created at destination</p></dd>                    </dl>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.DestinationPreparationTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\DestinationPreparationTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_removeExistingDestinationIfExists" name="method_removeExistingDestinationIfExists" class="anchor"></a>
+            <article class="method">
+                <h3 class="private">removeExistingDestinationIfExists()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">removeExistingDestinationIfExists(): void</pre>
+                <p><em>Remove existing destination.</em></p>                    <h4>Throws</h4>
+                    <dl>                            <dt>\WebPConvert\Convert\Exceptions\ConversionFailed\FileSystemProblems\CreateDestinationFileException</dt>
+                            <dd><p>if file cannot be removed</p></dd>                    </dl>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.DestinationPreparationTrait.html"><div class="path-wrapper">\WebPConvert\Convert\Converters\BaseTraits\DestinationPreparationTrait</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getPath" name="method_getPath" class="anchor"></a>
+            <article class="method">
+                <h3 class="private">getPath()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getPath()</pre>
+                <p><em></em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getVersion" name="method_getVersion" class="anchor"></a>
+            <article class="method">
+                <h3 class="private">getVersion()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getVersion()</pre>
+                <p><em></em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_createCommandLineOptions" name="method_createCommandLineOptions" class="anchor"></a>
+            <article class="method">
+                <h3 class="private">createCommandLineOptions()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">createCommandLineOptions(): string</pre>
+                <p><em>Build command line options</em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+                    <h4>Returns</h4>string            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>        </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">ImageMagick.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/vendor\rosell-dk\webp-convert\src\Convert\Converters\ImageMagick.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">                            <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>                                        <li><a href="../namespaces/CoffeeCode.html">\CoffeeCode</a></li>                                        <li><a href="../namespaces/Composer.html">\Composer</a></li>                                        <li><a href="../namespaces/Example.html">\Example</a></li>                                        <li><a href="../namespaces/ImageMimeTypeGuesser.html">\ImageMimeTypeGuesser</a></li>                                        <li><a href="../namespaces/League.html">\League</a></li>                                        <li><a href="../namespaces/Source.html">\Source</a></li>                                        <li><a href="../namespaces/Test.html">\Test</a></li>                                        <li><a href="../namespaces/WebPConvert.html">\WebPConvert</a></li>                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">                            <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">                            <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    onJuly 16th, 2020 at 02:14.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

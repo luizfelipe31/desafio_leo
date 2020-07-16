@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>desafio_leo</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">desafio_leo</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">                    <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">                            <li><a href="../namespaces/CoffeeCode.html">\CoffeeCode</a></li>                            <li><a href="../namespaces/Composer.html">\Composer</a></li>                            <li><a href="../namespaces/Example.html">\Example</a></li>                            <li><a href="../namespaces/ImageMimeTypeGuesser.html">\ImageMimeTypeGuesser</a></li>                            <li><a href="../namespaces/League.html">\League</a></li>                            <li><a href="../namespaces/Source.html">\Source</a></li>                            <li><a href="../namespaces/Test.html">\Test</a></li>                            <li><a href="../namespaces/WebPConvert.html">\WebPConvert</a></li>                        </ul>
+                    </li>                    <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">873</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">10</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">                                    <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">1</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">    <section class="row-fluid">
+        <div class="span2 sidebar">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-toggle" data-toggle="collapse" data-target="#namespace-275333023"></a>                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-275333023" class="accordion-body collapsein">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-853542968"></a>                <a href="../namespaces/CoffeeCode.html" style="margin-left: 30px; padding-left: 0">CoffeeCode</a>
+            </div>
+            <div id="namespace-853542968" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-215752329"></a>                <a href="../namespaces/CoffeeCode.Uploader.html" style="margin-left: 30px; padding-left: 0">Uploader</a>
+            </div>
+            <div id="namespace-215752329" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/CoffeeCode.Uploader.File.html">File</a></li>                            <li class="class"><a href="../classes/CoffeeCode.Uploader.Media.html">Media</a></li>                            <li class="class"><a href="../classes/CoffeeCode.Uploader.Send.html">Send</a></li>                            <li class="class"><a href="../classes/CoffeeCode.Uploader.Uploader.html">Uploader</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-955715303"></a>                <a href="../namespaces/Composer.html" style="margin-left: 30px; padding-left: 0">Composer</a>
+            </div>
+            <div id="namespace-955715303" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1892797808"></a>                <a href="../namespaces/Composer.Autoload.html" style="margin-left: 30px; padding-left: 0">Autoload</a>
+            </div>
+            <div id="namespace-1892797808" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Composer.Autoload.ClassLoader.html">ClassLoader</a></li>                            <li class="class"><a href="../classes/Composer.Autoload.ComposerStaticInit6fb7b337941f1bddd83caca15b07f3ce.html">ComposerStaticInit6fb7b337941f1bddd83caca15b07f3ce</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1087111751"></a>                <a href="../namespaces/Example.html" style="margin-left: 30px; padding-left: 0">Example</a>
+            </div>
+            <div id="namespace-1087111751" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1059485711"></a>                <a href="../namespaces/Example.Models.html" style="margin-left: 30px; padding-left: 0">Models</a>
+            </div>
+            <div id="namespace-1059485711" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Example.Models.Address.html">Address</a></li>                            <li class="class"><a href="../classes/Example.Models.User.html">User</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-288414789"></a>                <a href="../namespaces/ImageMimeTypeGuesser.html" style="margin-left: 30px; padding-left: 0">ImageMimeTypeGuesser</a>
+            </div>
+            <div id="namespace-288414789" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1429633137"></a>                <a href="../namespaces/ImageMimeTypeGuesser.Detectors.html" style="margin-left: 30px; padding-left: 0">Detectors</a>
+            </div>
+            <div id="namespace-1429633137" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.AbstractDetector.html">AbstractDetector</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.ExifImageType.html">ExifImageType</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.FInfo.html">FInfo</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.GetImageSize.html">GetImageSize</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.MimeContentType.html">MimeContentType</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.SniffFirstFourBytes.html">SniffFirstFourBytes</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.Stack.html">Stack</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.GuessFromExtension.html">GuessFromExtension</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.ImageMimeTypeGuesser.html">ImageMimeTypeGuesser</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1438850655"></a>                <a href="../namespaces/League.html" style="margin-left: 30px; padding-left: 0">League</a>
+            </div>
+            <div id="namespace-1438850655" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-2007423920"></a>                <a href="../namespaces/League.Plates.html" style="margin-left: 30px; padding-left: 0">Plates</a>
+            </div>
+            <div id="namespace-2007423920" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1363483273"></a>                <a href="../namespaces/League.Plates.Exception.html" style="margin-left: 30px; padding-left: 0">Exception</a>
+            </div>
+            <div id="namespace-1363483273" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Exception.FuncException.html">FuncException</a></li>                            <li class="class"><a href="../classes/League.Plates.Exception.HydrateTemplateException.html">HydrateTemplateException</a></li>                            <li class="class"><a href="../classes/League.Plates.Exception.PlatesException.html">PlatesException</a></li>                            <li class="class"><a href="../classes/League.Plates.Exception.RenderTemplateException.html">RenderTemplateException</a></li>                            <li class="class"><a href="../classes/League.Plates.Exception.StackException.html">StackException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1312152048"></a>                <a href="../namespaces/League.Plates.Extension.html" style="margin-left: 30px; padding-left: 0">Extension</a>
+            </div>
+            <div id="namespace-1312152048" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-654227320"></a>                <a href="../namespaces/League.Plates.Extension.Data.html" style="margin-left: 30px; padding-left: 0">Data</a>
+            </div>
+            <div id="namespace-654227320" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Extension.Data.DataExtension.html">DataExtension</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1639226063"></a>                <a href="../namespaces/League.Plates.Extension.Folders.html" style="margin-left: 30px; padding-left: 0">Folders</a>
+            </div>
+            <div id="namespace-1639226063" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Extension.Folders.FoldersExtension.html">FoldersExtension</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-646546531"></a>                <a href="../namespaces/League.Plates.Extension.LayoutSections.html" style="margin-left: 30px; padding-left: 0">LayoutSections</a>
+            </div>
+            <div id="namespace-646546531" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Extension.LayoutSections.DefaultLayoutRenderTemplate.html">DefaultLayoutRenderTemplate</a></li>                            <li class="class"><a href="../classes/League.Plates.Extension.LayoutSections.LayoutSectionsExtension.html">LayoutSectionsExtension</a></li>                            <li class="class"><a href="../classes/League.Plates.Extension.LayoutSections.Sections.html">Sections</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1810653511"></a>                <a href="../namespaces/League.Plates.Extension.Path.html" style="margin-left: 30px; padding-left: 0">Path</a>
+            </div>
+            <div id="namespace-1810653511" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Extension.Path.PathExtension.html">PathExtension</a></li>                            <li class="class"><a href="../classes/League.Plates.Extension.Path.ResolvePathArgs.html">ResolvePathArgs</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1823052650"></a>                <a href="../namespaces/League.Plates.Extension.RenderContext.html" style="margin-left: 30px; padding-left: 0">RenderContext</a>
+            </div>
+            <div id="namespace-1823052650" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Extension.RenderContext.FuncArgs.html">FuncArgs</a></li>                            <li class="class"><a href="../classes/League.Plates.Extension.RenderContext.RenderContextExtension.html">RenderContextExtension</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="interface"><a href="../classes/League.Plates.Extension.ExtensionInterface.html">ExtensionInterface</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-923866882"></a>                <a href="../namespaces/League.Plates.RenderTemplate.html" style="margin-left: 30px; padding-left: 0">RenderTemplate</a>
+            </div>
+            <div id="namespace-923866882" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.RenderTemplate.FileSystemRenderTemplate.html">FileSystemRenderTemplate</a></li>                            <li class="class"><a href="../classes/League.Plates.RenderTemplate.MockRenderTemplate.html">MockRenderTemplate</a></li>                            <li class="class"><a href="../classes/League.Plates.RenderTemplate.RenderTemplateDecorator.html">RenderTemplateDecorator</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                <a href="../namespaces/League.Plates.Template.html" style="margin-left: 30px; padding-left: 0">Template</a>
+            </div>
+            <div id="namespace-2134843039" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1527081305"></a>                <a href="../namespaces/League.Plates.Util.html" style="margin-left: 30px; padding-left: 0">Util</a>
+            </div>
+            <div id="namespace-1527081305" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Util.Container.html">Container</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="interface"><a href="../classes/League.Plates.Extension.html">Extension</a></li>                            <li class="interface"><a href="../classes/League.Plates.RenderTemplate.html">RenderTemplate</a></li>                            <li class="class"><a href="../classes/League.Plates.Engine.html">Engine</a></li>                            <li class="class"><a href="../classes/League.Plates.PlatesExtension.html">PlatesExtension</a></li>                            <li class="class"><a href="../classes/League.Plates.TemplateReference.html">TemplateReference</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-2096556851"></a>                <a href="../namespaces/Source.html" style="margin-left: 30px; padding-left: 0">Source</a>
+            </div>
+            <div id="namespace-2096556851" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-296622025"></a>                <a href="../namespaces/Source.Core.html" style="margin-left: 30px; padding-left: 0">Core</a>
+            </div>
+            <div id="namespace-296622025" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Source.Core.Controller.html">Controller</a></li>                            <li class="class"><a href="../classes/Source.Core.View.html">View</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-623829367"></a>                <a href="../namespaces/Source.Web.html" style="margin-left: 30px; padding-left: 0">Web</a>
+            </div>
+            <div id="namespace-623829367" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Source.Web.Web.html">Web</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-323588874"></a>                <a href="../namespaces/Test.html" style="margin-left: 30px; padding-left: 0">Test</a>
+            </div>
+            <div id="namespace-323588874" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Test.Coffee.html">Coffee</a></li>                            <li class="class"><a href="../classes/Test.Name.html">Name</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1067833333"></a>                <a href="../namespaces/WebPConvert.html" style="margin-left: 30px; padding-left: 0">WebPConvert</a>
+            </div>
+            <div id="namespace-1067833333" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-329492133"></a>                <a href="../namespaces/WebPConvert.Convert.html" style="margin-left: 30px; padding-left: 0">Convert</a>
+            </div>
+            <div id="namespace-329492133" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-2080165013"></a>                <a href="../namespaces/WebPConvert.Convert.Converters.html" style="margin-left: 30px; padding-left: 0">Converters</a>
+            </div>
+            <div id="namespace-2080165013" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1803526671"></a>                <a href="../namespaces/WebPConvert.Convert.Converters.BaseTraits.html" style="margin-left: 30px; padding-left: 0">BaseTraits</a>
+            </div>
+            <div id="namespace-1803526671" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.AutoQualityTrait.html">AutoQualityTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.DestinationPreparationTrait.html">DestinationPreparationTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.LoggerTrait.html">LoggerTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html">OptionsTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html">WarningLoggerTrait</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-977058610"></a>                <a href="../namespaces/WebPConvert.Convert.Converters.ConverterTraits.html" style="margin-left: 30px; padding-left: 0">ConverterTraits</a>
+            </div>
+            <div id="namespace-977058610" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.CloudConverterTrait.html">CloudConverterTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.CurlTrait.html">CurlTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.EncodingAutoTrait.html">EncodingAutoTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.ExecTrait.html">ExecTrait</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html">AbstractConverter</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Cwebp.html">Cwebp</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Ewww.html">Ewww</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Gd.html">Gd</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Gmagick.html">Gmagick</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.GmagickBinary.html">GmagickBinary</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.GraphicsMagick.html">GraphicsMagick</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.ImageMagick.html">ImageMagick</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Imagick.html">Imagick</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.ImagickBinary.html">ImagickBinary</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Stack.html">Stack</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Vips.html">Vips</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Wpc.html">Wpc</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-447220501"></a>                <a href="../namespaces/WebPConvert.Convert.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-447220501" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-201100903"></a>                <a href="../namespaces/WebPConvert.Convert.Exceptions.ConversionFailed.html" style="margin-left: 30px; padding-left: 0">ConversionFailed</a>
+            </div>
+            <div id="namespace-201100903" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-175867845"></a>                <a href="../namespaces/WebPConvert.Convert.Exceptions.ConversionFailed.ConverterNotOperational.html" style="margin-left: 30px; padding-left: 0">ConverterNotOperational</a>
+            </div>
+            <div id="namespace-175867845" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.ConverterNotOperational.InvalidApiKeyException.html">InvalidApiKeyException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.ConverterNotOperational.SystemRequirementsNotMetException.html">SystemRequirementsNotMetException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1573080992"></a>                <a href="../namespaces/WebPConvert.Convert.Exceptions.ConversionFailed.FileSystemProblems.html" style="margin-left: 30px; padding-left: 0">FileSystemProblems</a>
+            </div>
+            <div id="namespace-1573080992" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.FileSystemProblems.CreateDestinationFileException.html">CreateDestinationFileException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.FileSystemProblems.CreateDestinationFolderException.html">CreateDestinationFolderException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-266889343"></a>                <a href="../namespaces/WebPConvert.Convert.Exceptions.ConversionFailed.InvalidInput.html" style="margin-left: 30px; padding-left: 0">InvalidInput</a>
+            </div>
+            <div id="namespace-266889343" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.InvalidInput.ConverterNotFoundException.html">ConverterNotFoundException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.InvalidInput.InvalidImageTypeException.html">InvalidImageTypeException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.InvalidInput.TargetNotFoundException.html">TargetNotFoundException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.ConversionSkippedException.html">ConversionSkippedException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.ConverterNotOperationalException.html">ConverterNotOperationalException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.FileSystemProblemsException.html">FileSystemProblemsException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.InvalidInputException.html">InvalidInputException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailedException.html">ConversionFailedException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1078286938"></a>                <a href="../namespaces/WebPConvert.Convert.Helpers.html" style="margin-left: 30px; padding-left: 0">Helpers</a>
+            </div>
+            <div id="namespace-1078286938" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Helpers.JpegQualityDetector.html">JpegQualityDetector</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Helpers.PhpIniSizes.html">PhpIniSizes</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.ConverterFactory.html">ConverterFactory</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-2146389254"></a>                <a href="../namespaces/WebPConvert.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-2146389254" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-2048765800"></a>                <a href="../namespaces/WebPConvert.Exceptions.InvalidInput.html" style="margin-left: 30px; padding-left: 0">InvalidInput</a>
+            </div>
+            <div id="namespace-2048765800" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Exceptions.InvalidInput.InvalidImageTypeException.html">InvalidImageTypeException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Exceptions.InvalidInput.TargetNotFoundException.html">TargetNotFoundException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Exceptions.InvalidInputException.html">InvalidInputException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Exceptions.WebPConvertException.html">WebPConvertException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1492507750"></a>                <a href="../namespaces/WebPConvert.Helpers.html" style="margin-left: 30px; padding-left: 0">Helpers</a>
+            </div>
+            <div id="namespace-1492507750" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Helpers.BinaryDiscovery.html">BinaryDiscovery</a></li>                            <li class="class"><a href="../classes/WebPConvert.Helpers.FileExists.html">FileExists</a></li>                            <li class="class"><a href="../classes/WebPConvert.Helpers.InputValidator.html">InputValidator</a></li>                            <li class="class"><a href="../classes/WebPConvert.Helpers.MimeType.html">MimeType</a></li>                            <li class="class"><a href="../classes/WebPConvert.Helpers.PathChecker.html">PathChecker</a></li>                            <li class="class"><a href="../classes/WebPConvert.Helpers.Sanitize.html">Sanitize</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-376180406"></a>                <a href="../namespaces/WebPConvert.Loggers.html" style="margin-left: 30px; padding-left: 0">Loggers</a>
+            </div>
+            <div id="namespace-376180406" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Loggers.BaseLogger.html">BaseLogger</a></li>                            <li class="class"><a href="../classes/WebPConvert.Loggers.BufferLogger.html">BufferLogger</a></li>                            <li class="class"><a href="../classes/WebPConvert.Loggers.EchoLogger.html">EchoLogger</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-687996283"></a>                <a href="../namespaces/WebPConvert.Options.html" style="margin-left: 30px; padding-left: 0">Options</a>
+            </div>
+            <div id="namespace-687996283" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1225466099"></a>                <a href="../namespaces/WebPConvert.Options.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-1225466099" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Options.Exceptions.InvalidOptionTypeException.html">InvalidOptionTypeException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.Exceptions.InvalidOptionValueException.html">InvalidOptionValueException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.Exceptions.OptionNotFoundException.html">OptionNotFoundException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Options.ArrayOption.html">ArrayOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.BooleanOption.html">BooleanOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.GhostOption.html">GhostOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.IntegerOption.html">IntegerOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.IntegerOrNullOption.html">IntegerOrNullOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.MetadataOption.html">MetadataOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.Option.html">Option</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.Options.html">Options</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.QualityOption.html">QualityOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.SensitiveArrayOption.html">SensitiveArrayOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.SensitiveStringOption.html">SensitiveStringOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.StringOption.html">StringOption</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1744430758"></a>                <a href="../namespaces/WebPConvert.Serve.html" style="margin-left: 30px; padding-left: 0">Serve</a>
+            </div>
+            <div id="namespace-1744430758" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-889377200"></a>                <a href="../namespaces/WebPConvert.Serve.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-889377200" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Serve.Exceptions.ServeFailedException.html">ServeFailedException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Serve.Header.html">Header</a></li>                            <li class="class"><a href="../classes/WebPConvert.Serve.Report.html">Report</a></li>                            <li class="class"><a href="../classes/WebPConvert.Serve.ServeConvertedWebP.html">ServeConvertedWebP</a></li>                            <li class="class"><a href="../classes/WebPConvert.Serve.ServeConvertedWebPWithErrorHandling.html">ServeConvertedWebPWithErrorHandling</a></li>                            <li class="class"><a href="../classes/WebPConvert.Serve.ServeFile.html">ServeFile</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.WebPConvert.html">WebPConvert</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/ComposerAutoloaderInit6fb7b337941f1bddd83caca15b07f3ce.html">ComposerAutoloaderInit6fb7b337941f1bddd83caca15b07f3ce</a></li>                            <li class="class"><a href="../classes/DocsConfig.html">DocsConfig</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content namespace">
+                    <nav>                    </nav>
+                    <h1><small></small>\</h1>                    <h2>Namespaces</h2>
+                    <table class="table table-hover">                            <tr>
+                                <td><a href="../namespaces/CoffeeCode.html">CoffeeCode</a></td>
+                            </tr>                            <tr>
+                                <td><a href="../namespaces/Composer.html">Composer</a></td>
+                            </tr>                            <tr>
+                                <td><a href="../namespaces/Example.html">Example</a></td>
+                            </tr>                            <tr>
+                                <td><a href="../namespaces/ImageMimeTypeGuesser.html">ImageMimeTypeGuesser</a></td>
+                            </tr>                            <tr>
+                                <td><a href="../namespaces/League.html">League</a></td>
+                            </tr>                            <tr>
+                                <td><a href="../namespaces/Source.html">Source</a></td>
+                            </tr>                            <tr>
+                                <td><a href="../namespaces/Test.html">Test</a></td>
+                            </tr>                            <tr>
+                                <td><a href="../namespaces/WebPConvert.html">WebPConvert</a></td>
+                            </tr>                    </table>                    <h2>Classes</h2>
+                    <table class="table table-hover">                        <tr>
+                            <td><a href="../classes/ComposerAutoloaderInit6fb7b337941f1bddd83caca15b07f3ce.html">ComposerAutoloaderInit6fb7b337941f1bddd83caca15b07f3ce</a></td>
+                            <td><em></em></td>
+                        </tr>                        <tr>
+                            <td><a href="../classes/DocsConfig.html">DocsConfig</a></td>
+                            <td><em></em></td>
+                        </tr>                    </table>                </div>
+
+                <aside class="span4 detailsbar">
+                    <dl>
+                        <dt>Namespace hierarchy</dt>
+                        <dd class="hierarchy">                            <div class="namespace-wrapper">\</div>
+                        </dd>
+                    </dl>
+                </aside>
+            </div>            <div class="row-fluid">
+                <section class="span8 content namespace">
+                    <h2>Constants</h2>
+                </section>
+                <aside class="span4 detailsbar"></aside>
+            </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_BASE" name="constant_BASE" class="anchor"></a>
+            <article id="constant_BASE" class="constant">
+                <h3 class="">BASE</h3>
+                <pre class="signature">BASE</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_BASE" name="constant_BASE" class="anchor"></a>
+            <article id="constant_BASE" class="constant">
+                <h3 class="">BASE</h3>
+                <pre class="signature">BASE</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_DATE_APP" name="constant_CONF_DATE_APP" class="anchor"></a>
+            <article id="constant_CONF_DATE_APP" class="constant">
+                <h3 class="">CONF_DATE_APP</h3>
+                <pre class="signature">CONF_DATE_APP</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_DATE_BR" name="constant_CONF_DATE_BR" class="anchor"></a>
+            <article id="constant_CONF_DATE_BR" class="constant">
+                <h3 class="">CONF_DATE_BR</h3>
+                <pre class="signature">CONF_DATE_BR</pre>
+                <p><em>DATES</em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_IMAGE_CACHE" name="constant_CONF_IMAGE_CACHE" class="anchor"></a>
+            <article id="constant_CONF_IMAGE_CACHE" class="constant">
+                <h3 class="">CONF_IMAGE_CACHE</h3>
+                <pre class="signature">CONF_IMAGE_CACHE</pre>
+                <p><em>IMAGES</em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_IMAGE_QUALITY" name="constant_CONF_IMAGE_QUALITY" class="anchor"></a>
+            <article id="constant_CONF_IMAGE_QUALITY" class="constant">
+                <h3 class="">CONF_IMAGE_QUALITY</h3>
+                <pre class="signature">CONF_IMAGE_QUALITY</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_IMAGE_SIZE" name="constant_CONF_IMAGE_SIZE" class="anchor"></a>
+            <article id="constant_CONF_IMAGE_SIZE" class="constant">
+                <h3 class="">CONF_IMAGE_SIZE</h3>
+                <pre class="signature">CONF_IMAGE_SIZE</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_PASSWD_ALGO" name="constant_CONF_PASSWD_ALGO" class="anchor"></a>
+            <article id="constant_CONF_PASSWD_ALGO" class="constant">
+                <h3 class="">CONF_PASSWD_ALGO</h3>
+                <pre class="signature">CONF_PASSWD_ALGO</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_PASSWD_MAX_LEN" name="constant_CONF_PASSWD_MAX_LEN" class="anchor"></a>
+            <article id="constant_CONF_PASSWD_MAX_LEN" class="constant">
+                <h3 class="">CONF_PASSWD_MAX_LEN</h3>
+                <pre class="signature">CONF_PASSWD_MAX_LEN</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_PASSWD_MIN_LEN" name="constant_CONF_PASSWD_MIN_LEN" class="anchor"></a>
+            <article id="constant_CONF_PASSWD_MIN_LEN" class="constant">
+                <h3 class="">CONF_PASSWD_MIN_LEN</h3>
+                <pre class="signature">CONF_PASSWD_MIN_LEN</pre>
+                <p><em>PASSWORD</em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_PASSWD_OPTION" name="constant_CONF_PASSWD_OPTION" class="anchor"></a>
+            <article id="constant_CONF_PASSWD_OPTION" class="constant">
+                <h3 class="">CONF_PASSWD_OPTION</h3>
+                <pre class="signature">CONF_PASSWD_OPTION</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_SITE_ADDR_CITY" name="constant_CONF_SITE_ADDR_CITY" class="anchor"></a>
+            <article id="constant_CONF_SITE_ADDR_CITY" class="constant">
+                <h3 class="">CONF_SITE_ADDR_CITY</h3>
+                <pre class="signature">CONF_SITE_ADDR_CITY</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_SITE_ADDR_COMPLEMENT" name="constant_CONF_SITE_ADDR_COMPLEMENT" class="anchor"></a>
+            <article id="constant_CONF_SITE_ADDR_COMPLEMENT" class="constant">
+                <h3 class="">CONF_SITE_ADDR_COMPLEMENT</h3>
+                <pre class="signature">CONF_SITE_ADDR_COMPLEMENT</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_SITE_ADDR_NUMBER" name="constant_CONF_SITE_ADDR_NUMBER" class="anchor"></a>
+            <article id="constant_CONF_SITE_ADDR_NUMBER" class="constant">
+                <h3 class="">CONF_SITE_ADDR_NUMBER</h3>
+                <pre class="signature">CONF_SITE_ADDR_NUMBER</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_SITE_ADDR_STATE" name="constant_CONF_SITE_ADDR_STATE" class="anchor"></a>
+            <article id="constant_CONF_SITE_ADDR_STATE" class="constant">
+                <h3 class="">CONF_SITE_ADDR_STATE</h3>
+                <pre class="signature">CONF_SITE_ADDR_STATE</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_SITE_ADDR_STREET" name="constant_CONF_SITE_ADDR_STREET" class="anchor"></a>
+            <article id="constant_CONF_SITE_ADDR_STREET" class="constant">
+                <h3 class="">CONF_SITE_ADDR_STREET</h3>
+                <pre class="signature">CONF_SITE_ADDR_STREET</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_SITE_ADDR_ZIPCODE" name="constant_CONF_SITE_ADDR_ZIPCODE" class="anchor"></a>
+            <article id="constant_CONF_SITE_ADDR_ZIPCODE" class="constant">
+                <h3 class="">CONF_SITE_ADDR_ZIPCODE</h3>
+                <pre class="signature">CONF_SITE_ADDR_ZIPCODE</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_SITE_DESC" name="constant_CONF_SITE_DESC" class="anchor"></a>
+            <article id="constant_CONF_SITE_DESC" class="constant">
+                <h3 class="">CONF_SITE_DESC</h3>
+                <pre class="signature">CONF_SITE_DESC</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_SITE_DOMAIN" name="constant_CONF_SITE_DOMAIN" class="anchor"></a>
+            <article id="constant_CONF_SITE_DOMAIN" class="constant">
+                <h3 class="">CONF_SITE_DOMAIN</h3>
+                <pre class="signature">CONF_SITE_DOMAIN</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_SITE_LANG" name="constant_CONF_SITE_LANG" class="anchor"></a>
+            <article id="constant_CONF_SITE_LANG" class="constant">
+                <h3 class="">CONF_SITE_LANG</h3>
+                <pre class="signature">CONF_SITE_LANG</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_SITE_NAME" name="constant_CONF_SITE_NAME" class="anchor"></a>
+            <article id="constant_CONF_SITE_NAME" class="constant">
+                <h3 class="">CONF_SITE_NAME</h3>
+                <pre class="signature">CONF_SITE_NAME</pre>
+                <p><em>SITE</em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_SITE_TITLE" name="constant_CONF_SITE_TITLE" class="anchor"></a>
+            <article id="constant_CONF_SITE_TITLE" class="constant">
+                <h3 class="">CONF_SITE_TITLE</h3>
+                <pre class="signature">CONF_SITE_TITLE</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_UPLOAD_DIR" name="constant_CONF_UPLOAD_DIR" class="anchor"></a>
+            <article id="constant_CONF_UPLOAD_DIR" class="constant">
+                <h3 class="">CONF_UPLOAD_DIR</h3>
+                <pre class="signature">CONF_UPLOAD_DIR</pre>
+                <p><em>UPLOAD</em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_UPLOAD_FILE_DIR" name="constant_CONF_UPLOAD_FILE_DIR" class="anchor"></a>
+            <article id="constant_CONF_UPLOAD_FILE_DIR" class="constant">
+                <h3 class="">CONF_UPLOAD_FILE_DIR</h3>
+                <pre class="signature">CONF_UPLOAD_FILE_DIR</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_UPLOAD_IMAGE_DIR" name="constant_CONF_UPLOAD_IMAGE_DIR" class="anchor"></a>
+            <article id="constant_CONF_UPLOAD_IMAGE_DIR" class="constant">
+                <h3 class="">CONF_UPLOAD_IMAGE_DIR</h3>
+                <pre class="signature">CONF_UPLOAD_IMAGE_DIR</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_UPLOAD_MEDIA_DIR" name="constant_CONF_UPLOAD_MEDIA_DIR" class="anchor"></a>
+            <article id="constant_CONF_UPLOAD_MEDIA_DIR" class="constant">
+                <h3 class="">CONF_UPLOAD_MEDIA_DIR</h3>
+                <pre class="signature">CONF_UPLOAD_MEDIA_DIR</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_URL" name="constant_CONF_URL" class="anchor"></a>
+            <article id="constant_CONF_URL" class="constant">
+                <h3 class="">CONF_URL</h3>
+                <pre class="signature">CONF_URL</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_URL_BASE" name="constant_CONF_URL_BASE" class="anchor"></a>
+            <article id="constant_CONF_URL_BASE" class="constant">
+                <h3 class="">CONF_URL_BASE</h3>
+                <pre class="signature">CONF_URL_BASE</pre>
+                <p><em>PROJECT URLs</em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_VIEW_EXT" name="constant_CONF_VIEW_EXT" class="anchor"></a>
+            <article id="constant_CONF_VIEW_EXT" class="constant">
+                <h3 class="">CONF_VIEW_EXT</h3>
+                <pre class="signature">CONF_VIEW_EXT</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_VIEW_PATH" name="constant_CONF_VIEW_PATH" class="anchor"></a>
+            <article id="constant_CONF_VIEW_PATH" class="constant">
+                <h3 class="">CONF_VIEW_PATH</h3>
+                <pre class="signature">CONF_VIEW_PATH</pre>
+                <p><em>VIEW</em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_VIEW_THEME_WEB" name="constant_CONF_VIEW_THEME_WEB" class="anchor"></a>
+            <article id="constant_CONF_VIEW_THEME_WEB" class="constant">
+                <h3 class="">CONF_VIEW_THEME_WEB</h3>
+                <pre class="signature">CONF_VIEW_THEME_WEB</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_CONF_VIEW_WEB" name="constant_CONF_VIEW_WEB" class="anchor"></a>
+            <article id="constant_CONF_VIEW_WEB" class="constant">
+                <h3 class="">CONF_VIEW_WEB</h3>
+                <pre class="signature">CONF_VIEW_WEB</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DATA_LAYER_CONFIG" name="constant_DATA_LAYER_CONFIG" class="anchor"></a>
+            <article id="constant_DATA_LAYER_CONFIG" class="constant">
+                <h3 class="">DATA_LAYER_CONFIG</h3>
+                <pre class="signature">DATA_LAYER_CONFIG</pre>
+                <p><em></em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DATA_LAYER_CONFIG" name="constant_DATA_LAYER_CONFIG" class="anchor"></a>
+            <article id="constant_DATA_LAYER_CONFIG" class="constant">
+                <h3 class="">DATA_LAYER_CONFIG</h3>
+                <pre class="signature">DATA_LAYER_CONFIG</pre>
+                <p><em>DATABASE</em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>            <div class="row-fluid">
+                <section class="span8 content namespace">
+                    <h2>Functions</h2>
+                </section>
+                <aside class="span4 detailsbar"></aside>
+            </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_buildDocs" name="method_buildDocs" class="anchor"></a>
+            <article class="method">
+                <h3 class="">buildDocs()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">buildDocs(\DocsConfig  <span class="argument">$config</span>,  <span class="argument">$branch</span>,  <span class="argument">$version</span>,  <span class="argument">$defaultLayout</span>,  <span class="argument">$versionsYaml</span>,  <span class="argument">$dst</span>)</pre>
+                <p><em></em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td><a href="../classes/DocsConfig.html">\DocsConfig</a></td>
+                                <td>$config</td>
+                                <td></td>
+                            </tr>                            <tr>
+                                <td></td>
+                                <td>$branch</td>
+                                <td></td>
+                            </tr>                            <tr>
+                                <td></td>
+                                <td>$version</td>
+                                <td></td>
+                            </tr>                            <tr>
+                                <td></td>
+                                <td>$defaultLayout</td>
+                                <td></td>
+                            </tr>                            <tr>
+                                <td></td>
+                                <td>$versionsYaml</td>
+                                <td></td>
+                            </tr>                            <tr>
+                                <td></td>
+                                <td>$dst</td>
+                                <td></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_buildVersionsYaml" name="method_buildVersionsYaml" class="anchor"></a>
+            <article class="method">
+                <h3 class="">buildVersionsYaml()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">buildVersionsYaml(\DocsConfig  <span class="argument">$config</span>,  <span class="argument">$currentVersion</span>)</pre>
+                <p><em></em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td><a href="../classes/DocsConfig.html">\DocsConfig</a></td>
+                                <td>$config</td>
+                                <td></td>
+                            </tr>                            <tr>
+                                <td></td>
+                                <td>$currentVersion</td>
+                                <td></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_composerRequire6fb7b337941f1bddd83caca15b07f3ce" name="method_composerRequire6fb7b337941f1bddd83caca15b07f3ce" class="anchor"></a>
+            <article class="method">
+                <h3 class="">composerRequire6fb7b337941f1bddd83caca15b07f3ce()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">composerRequire6fb7b337941f1bddd83caca15b07f3ce(  <span class="argument">$fileIdentifier</span>,  <span class="argument">$file</span>)</pre>
+                <p><em></em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td></td>
+                                <td>$fileIdentifier</td>
+                                <td></td>
+                            </tr>                            <tr>
+                                <td></td>
+                                <td>$file</td>
+                                <td></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_copyDocs" name="method_copyDocs" class="anchor"></a>
+            <article class="method">
+                <h3 class="">copyDocs()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">copyDocs(  <span class="argument">$src</span>)</pre>
+                <p><em></em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td></td>
+                                <td>$src</td>
+                                <td></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_createBuildDir" name="method_createBuildDir" class="anchor"></a>
+            <article class="method">
+                <h3 class="">createBuildDir()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">createBuildDir()</pre>
+                <p><em></em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_gitCheckout" name="method_gitCheckout" class="anchor"></a>
+            <article class="method">
+                <h3 class="">gitCheckout()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">gitCheckout(  <span class="argument">$branch</span>)</pre>
+                <p><em></em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td></td>
+                                <td>$branch</td>
+                                <td></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_gitCurrentBranch" name="method_gitCurrentBranch" class="anchor"></a>
+            <article class="method">
+                <h3 class="">gitCurrentBranch()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">gitCurrentBranch()</pre>
+                <p><em></em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_gitResetBranch" name="method_gitResetBranch" class="anchor"></a>
+            <article class="method">
+                <h3 class="">gitResetBranch()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">gitResetBranch()</pre>
+                <p><em></em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_loadDefaultLayout" name="method_loadDefaultLayout" class="anchor"></a>
+            <article class="method">
+                <h3 class="">loadDefaultLayout()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">loadDefaultLayout(\DocsConfig  <span class="argument">$config</span>)</pre>
+                <p><em></em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td><a href="../classes/DocsConfig.html">\DocsConfig</a></td>
+                                <td>$config</td>
+                                <td></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_main" name="method_main" class="anchor"></a>
+            <article class="method">
+                <h3 class="">main()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">main(  <span class="argument">$argv</span>)</pre>
+                <p><em></em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td></td>
+                                <td>$argv</td>
+                                <td></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_reduce" name="method_reduce" class="anchor"></a>
+            <article class="method">
+                <h3 class="">reduce()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">reduce(  <span class="argument">$func</span>,  <span class="argument">$items</span>,  <span class="argument">$acc = null</span>)</pre>
+                <p><em></em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td></td>
+                                <td>$func</td>
+                                <td></td>
+                            </tr>                            <tr>
+                                <td></td>
+                                <td>$items</td>
+                                <td></td>
+                            </tr>                            <tr>
+                                <td></td>
+                                <td>$acc</td>
+                                <td></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_rmRf" name="method_rmRf" class="anchor"></a>
+            <article class="method">
+                <h3 class="">rmRf()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">rmRf(  <span class="argument">$dir</span>)</pre>
+                <p><em></em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td></td>
+                                <td>$dir</td>
+                                <td></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr>
+                        <th>package
+                        </th>
+                        <td><p>Default</p>                        </td>
+                    </tr>            </table>
+        </aside>
+    </div>
+        </div>
+    </section>
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">                            <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>                                        <li><a href="../namespaces/CoffeeCode.html">\CoffeeCode</a></li>                                        <li><a href="../namespaces/Composer.html">\Composer</a></li>                                        <li><a href="../namespaces/Example.html">\Example</a></li>                                        <li><a href="../namespaces/ImageMimeTypeGuesser.html">\ImageMimeTypeGuesser</a></li>                                        <li><a href="../namespaces/League.html">\League</a></li>                                        <li><a href="../namespaces/Source.html">\Source</a></li>                                        <li><a href="../namespaces/Test.html">\Test</a></li>                                        <li><a href="../namespaces/WebPConvert.html">\WebPConvert</a></li>                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">                            <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">                            <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    onJuly 16th, 2020 at 02:13.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

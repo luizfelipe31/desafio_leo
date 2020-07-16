@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>desafio_leo</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit--><script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">desafio_leo</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">                    <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">                            <li><a href="../namespaces/CoffeeCode.html">\CoffeeCode</a></li>                            <li><a href="../namespaces/Composer.html">\Composer</a></li>                            <li><a href="../namespaces/Example.html">\Example</a></li>                            <li><a href="../namespaces/ImageMimeTypeGuesser.html">\ImageMimeTypeGuesser</a></li>                            <li><a href="../namespaces/League.html">\League</a></li>                            <li><a href="../namespaces/Source.html">\Source</a></li>                            <li><a href="../namespaces/Test.html">\Test</a></li>                            <li><a href="../namespaces/WebPConvert.html">\WebPConvert</a></li>                        </ul>
+                    </li>                    <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">873</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">10</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">                                    <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">1</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">    <section class="row-fluid">
+        <div class="span2 sidebar">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-toggle" data-toggle="collapse" data-target="#namespace-1913212606"></a>                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1913212606" class="accordion-body collapsein">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-987128490"></a>                <a href="../namespaces/CoffeeCode.html" style="margin-left: 30px; padding-left: 0">CoffeeCode</a>
+            </div>
+            <div id="namespace-987128490" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1569559123"></a>                <a href="../namespaces/CoffeeCode.Uploader.html" style="margin-left: 30px; padding-left: 0">Uploader</a>
+            </div>
+            <div id="namespace-1569559123" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/CoffeeCode.Uploader.File.html">File</a></li>                            <li class="class"><a href="../classes/CoffeeCode.Uploader.Media.html">Media</a></li>                            <li class="class"><a href="../classes/CoffeeCode.Uploader.Send.html">Send</a></li>                            <li class="class"><a href="../classes/CoffeeCode.Uploader.Uploader.html">Uploader</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-465198174"></a>                <a href="../namespaces/Composer.html" style="margin-left: 30px; padding-left: 0">Composer</a>
+            </div>
+            <div id="namespace-465198174" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-58099065"></a>                <a href="../namespaces/Composer.Autoload.html" style="margin-left: 30px; padding-left: 0">Autoload</a>
+            </div>
+            <div id="namespace-58099065" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Composer.Autoload.ClassLoader.html">ClassLoader</a></li>                            <li class="class"><a href="../classes/Composer.Autoload.ComposerStaticInit6fb7b337941f1bddd83caca15b07f3ce.html">ComposerStaticInit6fb7b337941f1bddd83caca15b07f3ce</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-846030996"></a>                <a href="../namespaces/Example.html" style="margin-left: 30px; padding-left: 0">Example</a>
+            </div>
+            <div id="namespace-846030996" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1365356624"></a>                <a href="../namespaces/Example.Models.html" style="margin-left: 30px; padding-left: 0">Models</a>
+            </div>
+            <div id="namespace-1365356624" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Example.Models.Address.html">Address</a></li>                            <li class="class"><a href="../classes/Example.Models.User.html">User</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-55988244"></a>                <a href="../namespaces/ImageMimeTypeGuesser.html" style="margin-left: 30px; padding-left: 0">ImageMimeTypeGuesser</a>
+            </div>
+            <div id="namespace-55988244" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-156347370"></a>                <a href="../namespaces/ImageMimeTypeGuesser.Detectors.html" style="margin-left: 30px; padding-left: 0">Detectors</a>
+            </div>
+            <div id="namespace-156347370" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.AbstractDetector.html">AbstractDetector</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.ExifImageType.html">ExifImageType</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.FInfo.html">FInfo</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.GetImageSize.html">GetImageSize</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.MimeContentType.html">MimeContentType</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.SniffFirstFourBytes.html">SniffFirstFourBytes</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.Detectors.Stack.html">Stack</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.GuessFromExtension.html">GuessFromExtension</a></li>                            <li class="class"><a href="../classes/ImageMimeTypeGuesser.ImageMimeTypeGuesser.html">ImageMimeTypeGuesser</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1633147924"></a>                <a href="../namespaces/League.html" style="margin-left: 30px; padding-left: 0">League</a>
+            </div>
+            <div id="namespace-1633147924" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1135537570"></a>                <a href="../namespaces/League.Plates.html" style="margin-left: 30px; padding-left: 0">Plates</a>
+            </div>
+            <div id="namespace-1135537570" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-254461642"></a>                <a href="../namespaces/League.Plates.Exception.html" style="margin-left: 30px; padding-left: 0">Exception</a>
+            </div>
+            <div id="namespace-254461642" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Exception.FuncException.html">FuncException</a></li>                            <li class="class"><a href="../classes/League.Plates.Exception.HydrateTemplateException.html">HydrateTemplateException</a></li>                            <li class="class"><a href="../classes/League.Plates.Exception.PlatesException.html">PlatesException</a></li>                            <li class="class"><a href="../classes/League.Plates.Exception.RenderTemplateException.html">RenderTemplateException</a></li>                            <li class="class"><a href="../classes/League.Plates.Exception.StackException.html">StackException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-2031931793"></a>                <a href="../namespaces/League.Plates.Extension.html" style="margin-left: 30px; padding-left: 0">Extension</a>
+            </div>
+            <div id="namespace-2031931793" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1355264712"></a>                <a href="../namespaces/League.Plates.Extension.Data.html" style="margin-left: 30px; padding-left: 0">Data</a>
+            </div>
+            <div id="namespace-1355264712" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Extension.Data.DataExtension.html">DataExtension</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-2083480615"></a>                <a href="../namespaces/League.Plates.Extension.Folders.html" style="margin-left: 30px; padding-left: 0">Folders</a>
+            </div>
+            <div id="namespace-2083480615" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Extension.Folders.FoldersExtension.html">FoldersExtension</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1154233650"></a>                <a href="../namespaces/League.Plates.Extension.LayoutSections.html" style="margin-left: 30px; padding-left: 0">LayoutSections</a>
+            </div>
+            <div id="namespace-1154233650" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Extension.LayoutSections.DefaultLayoutRenderTemplate.html">DefaultLayoutRenderTemplate</a></li>                            <li class="class"><a href="../classes/League.Plates.Extension.LayoutSections.LayoutSectionsExtension.html">LayoutSectionsExtension</a></li>                            <li class="class"><a href="../classes/League.Plates.Extension.LayoutSections.Sections.html">Sections</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1089885539"></a>                <a href="../namespaces/League.Plates.Extension.Path.html" style="margin-left: 30px; padding-left: 0">Path</a>
+            </div>
+            <div id="namespace-1089885539" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Extension.Path.PathExtension.html">PathExtension</a></li>                            <li class="class"><a href="../classes/League.Plates.Extension.Path.ResolvePathArgs.html">ResolvePathArgs</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-126185338"></a>                <a href="../namespaces/League.Plates.Extension.RenderContext.html" style="margin-left: 30px; padding-left: 0">RenderContext</a>
+            </div>
+            <div id="namespace-126185338" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Extension.RenderContext.FuncArgs.html">FuncArgs</a></li>                            <li class="class"><a href="../classes/League.Plates.Extension.RenderContext.RenderContextExtension.html">RenderContextExtension</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="interface"><a href="../classes/League.Plates.Extension.ExtensionInterface.html">ExtensionInterface</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1191091115"></a>                <a href="../namespaces/League.Plates.RenderTemplate.html" style="margin-left: 30px; padding-left: 0">RenderTemplate</a>
+            </div>
+            <div id="namespace-1191091115" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.RenderTemplate.FileSystemRenderTemplate.html">FileSystemRenderTemplate</a></li>                            <li class="class"><a href="../classes/League.Plates.RenderTemplate.MockRenderTemplate.html">MockRenderTemplate</a></li>                            <li class="class"><a href="../classes/League.Plates.RenderTemplate.RenderTemplateDecorator.html">RenderTemplateDecorator</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                <a href="../namespaces/League.Plates.Template.html" style="margin-left: 30px; padding-left: 0">Template</a>
+            </div>
+            <div id="namespace-913211579" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1150214074"></a>                <a href="../namespaces/League.Plates.Util.html" style="margin-left: 30px; padding-left: 0">Util</a>
+            </div>
+            <div id="namespace-1150214074" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/League.Plates.Util.Container.html">Container</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="interface"><a href="../classes/League.Plates.Extension.html">Extension</a></li>                            <li class="interface"><a href="../classes/League.Plates.RenderTemplate.html">RenderTemplate</a></li>                            <li class="class"><a href="../classes/League.Plates.Engine.html">Engine</a></li>                            <li class="class"><a href="../classes/League.Plates.PlatesExtension.html">PlatesExtension</a></li>                            <li class="class"><a href="../classes/League.Plates.TemplateReference.html">TemplateReference</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1672359661"></a>                <a href="../namespaces/Source.html" style="margin-left: 30px; padding-left: 0">Source</a>
+            </div>
+            <div id="namespace-1672359661" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1859215259"></a>                <a href="../namespaces/Source.Core.html" style="margin-left: 30px; padding-left: 0">Core</a>
+            </div>
+            <div id="namespace-1859215259" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Source.Core.Controller.html">Controller</a></li>                            <li class="class"><a href="../classes/Source.Core.View.html">View</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1224190295"></a>                <a href="../namespaces/Source.Web.html" style="margin-left: 30px; padding-left: 0">Web</a>
+            </div>
+            <div id="namespace-1224190295" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Source.Web.Web.html">Web</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1391931542"></a>                <a href="../namespaces/Test.html" style="margin-left: 30px; padding-left: 0">Test</a>
+            </div>
+            <div id="namespace-1391931542" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Test.Coffee.html">Coffee</a></li>                            <li class="class"><a href="../classes/Test.Name.html">Name</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-556623867"></a>                <a href="../namespaces/WebPConvert.html" style="margin-left: 30px; padding-left: 0">WebPConvert</a>
+            </div>
+            <div id="namespace-556623867" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1204524314"></a>                <a href="../namespaces/WebPConvert.Convert.html" style="margin-left: 30px; padding-left: 0">Convert</a>
+            </div>
+            <div id="namespace-1204524314" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-63872629"></a>                <a href="../namespaces/WebPConvert.Convert.Converters.html" style="margin-left: 30px; padding-left: 0">Converters</a>
+            </div>
+            <div id="namespace-63872629" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1362848279"></a>                <a href="../namespaces/WebPConvert.Convert.Converters.BaseTraits.html" style="margin-left: 30px; padding-left: 0">BaseTraits</a>
+            </div>
+            <div id="namespace-1362848279" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.AutoQualityTrait.html">AutoQualityTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.DestinationPreparationTrait.html">DestinationPreparationTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.LoggerTrait.html">LoggerTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.OptionsTrait.html">OptionsTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.BaseTraits.WarningLoggerTrait.html">WarningLoggerTrait</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-831135684"></a>                <a href="../namespaces/WebPConvert.Convert.Converters.ConverterTraits.html" style="margin-left: 30px; padding-left: 0">ConverterTraits</a>
+            </div>
+            <div id="namespace-831135684" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.CloudConverterTrait.html">CloudConverterTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.CurlTrait.html">CurlTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.EncodingAutoTrait.html">EncodingAutoTrait</a></li>                            <li class="trait"><a href="../classes/WebPConvert.Convert.Converters.ConverterTraits.ExecTrait.html">ExecTrait</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.AbstractConverter.html">AbstractConverter</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Cwebp.html">Cwebp</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Ewww.html">Ewww</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Gd.html">Gd</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Gmagick.html">Gmagick</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.GmagickBinary.html">GmagickBinary</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.GraphicsMagick.html">GraphicsMagick</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.ImageMagick.html">ImageMagick</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Imagick.html">Imagick</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.ImagickBinary.html">ImagickBinary</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Stack.html">Stack</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Vips.html">Vips</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Converters.Wpc.html">Wpc</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-2127408056"></a>                <a href="../namespaces/WebPConvert.Convert.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-2127408056" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-2019570427"></a>                <a href="../namespaces/WebPConvert.Convert.Exceptions.ConversionFailed.html" style="margin-left: 30px; padding-left: 0">ConversionFailed</a>
+            </div>
+            <div id="namespace-2019570427" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1586692254"></a>                <a href="../namespaces/WebPConvert.Convert.Exceptions.ConversionFailed.ConverterNotOperational.html" style="margin-left: 30px; padding-left: 0">ConverterNotOperational</a>
+            </div>
+            <div id="namespace-1586692254" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.ConverterNotOperational.InvalidApiKeyException.html">InvalidApiKeyException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.ConverterNotOperational.SystemRequirementsNotMetException.html">SystemRequirementsNotMetException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1892496337"></a>                <a href="../namespaces/WebPConvert.Convert.Exceptions.ConversionFailed.FileSystemProblems.html" style="margin-left: 30px; padding-left: 0">FileSystemProblems</a>
+            </div>
+            <div id="namespace-1892496337" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.FileSystemProblems.CreateDestinationFileException.html">CreateDestinationFileException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.FileSystemProblems.CreateDestinationFolderException.html">CreateDestinationFolderException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-15089699"></a>                <a href="../namespaces/WebPConvert.Convert.Exceptions.ConversionFailed.InvalidInput.html" style="margin-left: 30px; padding-left: 0">InvalidInput</a>
+            </div>
+            <div id="namespace-15089699" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.InvalidInput.ConverterNotFoundException.html">ConverterNotFoundException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.InvalidInput.InvalidImageTypeException.html">InvalidImageTypeException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.InvalidInput.TargetNotFoundException.html">TargetNotFoundException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.ConversionSkippedException.html">ConversionSkippedException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.ConverterNotOperationalException.html">ConverterNotOperationalException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.FileSystemProblemsException.html">FileSystemProblemsException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailed.InvalidInputException.html">InvalidInputException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Exceptions.ConversionFailedException.html">ConversionFailedException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-249919653"></a>                <a href="../namespaces/WebPConvert.Convert.Helpers.html" style="margin-left: 30px; padding-left: 0">Helpers</a>
+            </div>
+            <div id="namespace-249919653" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.Helpers.JpegQualityDetector.html">JpegQualityDetector</a></li>                            <li class="class"><a href="../classes/WebPConvert.Convert.Helpers.PhpIniSizes.html">PhpIniSizes</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Convert.ConverterFactory.html">ConverterFactory</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-2076429136"></a>                <a href="../namespaces/WebPConvert.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-2076429136" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1982223881"></a>                <a href="../namespaces/WebPConvert.Exceptions.InvalidInput.html" style="margin-left: 30px; padding-left: 0">InvalidInput</a>
+            </div>
+            <div id="namespace-1982223881" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Exceptions.InvalidInput.InvalidImageTypeException.html">InvalidImageTypeException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Exceptions.InvalidInput.TargetNotFoundException.html">TargetNotFoundException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Exceptions.InvalidInputException.html">InvalidInputException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Exceptions.WebPConvertException.html">WebPConvertException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-345250094"></a>                <a href="../namespaces/WebPConvert.Helpers.html" style="margin-left: 30px; padding-left: 0">Helpers</a>
+            </div>
+            <div id="namespace-345250094" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Helpers.BinaryDiscovery.html">BinaryDiscovery</a></li>                            <li class="class"><a href="../classes/WebPConvert.Helpers.FileExists.html">FileExists</a></li>                            <li class="class"><a href="../classes/WebPConvert.Helpers.InputValidator.html">InputValidator</a></li>                            <li class="class"><a href="../classes/WebPConvert.Helpers.MimeType.html">MimeType</a></li>                            <li class="class"><a href="../classes/WebPConvert.Helpers.PathChecker.html">PathChecker</a></li>                            <li class="class"><a href="../classes/WebPConvert.Helpers.Sanitize.html">Sanitize</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1909154163"></a>                <a href="../namespaces/WebPConvert.Loggers.html" style="margin-left: 30px; padding-left: 0">Loggers</a>
+            </div>
+            <div id="namespace-1909154163" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Loggers.BaseLogger.html">BaseLogger</a></li>                            <li class="class"><a href="../classes/WebPConvert.Loggers.BufferLogger.html">BufferLogger</a></li>                            <li class="class"><a href="../classes/WebPConvert.Loggers.EchoLogger.html">EchoLogger</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-25186335"></a>                <a href="../namespaces/WebPConvert.Options.html" style="margin-left: 30px; padding-left: 0">Options</a>
+            </div>
+            <div id="namespace-25186335" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1733773048"></a>                <a href="../namespaces/WebPConvert.Options.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-1733773048" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Options.Exceptions.InvalidOptionTypeException.html">InvalidOptionTypeException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.Exceptions.InvalidOptionValueException.html">InvalidOptionValueException</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.Exceptions.OptionNotFoundException.html">OptionNotFoundException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Options.ArrayOption.html">ArrayOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.BooleanOption.html">BooleanOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.GhostOption.html">GhostOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.IntegerOption.html">IntegerOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.IntegerOrNullOption.html">IntegerOrNullOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.MetadataOption.html">MetadataOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.Option.html">Option</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.Options.html">Options</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.QualityOption.html">QualityOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.SensitiveArrayOption.html">SensitiveArrayOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.SensitiveStringOption.html">SensitiveStringOption</a></li>                            <li class="class"><a href="../classes/WebPConvert.Options.StringOption.html">StringOption</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-575414503"></a>                <a href="../namespaces/WebPConvert.Serve.html" style="margin-left: 30px; padding-left: 0">Serve</a>
+            </div>
+            <div id="namespace-575414503" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1367498131"></a>                <a href="../namespaces/WebPConvert.Serve.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-1367498131" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Serve.Exceptions.ServeFailedException.html">ServeFailedException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.Serve.Header.html">Header</a></li>                            <li class="class"><a href="../classes/WebPConvert.Serve.Report.html">Report</a></li>                            <li class="class"><a href="../classes/WebPConvert.Serve.ServeConvertedWebP.html">ServeConvertedWebP</a></li>                            <li class="class"><a href="../classes/WebPConvert.Serve.ServeConvertedWebPWithErrorHandling.html">ServeConvertedWebPWithErrorHandling</a></li>                            <li class="class"><a href="../classes/WebPConvert.Serve.ServeFile.html">ServeFile</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/WebPConvert.WebPConvert.html">WebPConvert</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/ComposerAutoloaderInit6fb7b337941f1bddd83caca15b07f3ce.html">ComposerAutoloaderInit6fb7b337941f1bddd83caca15b07f3ce</a></li>                            <li class="class"><a href="../classes/DocsConfig.html">DocsConfig</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav><a href="../namespaces/WebPConvert.Options.html">\WebPConvert\Options</a> <i class="icon-level-up"></i>                    </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\WebPConvert\Options</small>QualityOption</h1>
+                    <p><em>Quality option.</em></p><p>Quality can be a number between 0-100 or &quot;auto&quot;</p>                    
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">                                    <a href="../classes/WebPConvert.Options.QualityOption.html#method___construct" class="">__construct()</a><br />                                    <a href="../classes/WebPConvert.Options.Option.html#method_getId" class="">getId()</a><br />                                    <a href="../classes/WebPConvert.Options.Option.html#method_getDefaultValue" class="">getDefaultValue()</a><br />                                    <a href="../classes/WebPConvert.Options.Option.html#method_getValue" class="">getValue()</a><br />                                    <a href="../classes/WebPConvert.Options.Option.html#method_isValueExplicitlySet" class="">isValueExplicitlySet()</a><br />                                    <a href="../classes/WebPConvert.Options.Option.html#method_setValue" class="">setValue()</a><br />                                    <a href="../classes/WebPConvert.Options.QualityOption.html#method_check" class="">check()</a><br />                                    <a href="../classes/WebPConvert.Options.QualityOption.html#method_getValueForPrint" class="">getValueForPrint()</a><br />                            </section>
+                            <section class="span4">                                    <em>No public properties found</em>                            </section>
+                            <section class="span4">                                    <em>No constants found</em>                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">                                    <a href="../classes/WebPConvert.Options.Option.html#method_checkType" class="">checkType()</a><br />                            </section>
+                            <section class="span4">                                    <a href="../classes/WebPConvert.Options.Option.html#property_id" class="">$id</a><br />                                    <a href="../classes/WebPConvert.Options.Option.html#property_defaultValue" class="">$defaultValue</a><br />                                    <a href="../classes/WebPConvert.Options.Option.html#property_value" class="">$value</a><br />                                    <a href="../classes/WebPConvert.Options.Option.html#property_isExplicitlySet" class="">$isExplicitlySet</a><br />                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">                                    <em>No private methods found</em>                            </section>
+                            <section class="span4">                                    <em>No private properties found</em>                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/vendor.rosell-dk.webp-convert.src.Options.QualityOption.html"><div class="path-wrapper">vendor\rosell-dk\webp-convert\src\Options\QualityOption.php</div></a></dd>                        <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">WebPConvert</div></dd>                        <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                        <div class="namespace-wrapper"><a href="../classes/WebPConvert.Options.Option.html">\WebPConvert\Options\Option</a></div>                                <div class="namespace-wrapper">\WebPConvert\Options\QualityOption</div>
+                            </dd>                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">                        <tr>
+                            <th>author
+                            </th>
+                            <td><p>Bjørn Rosell <a href="mailto:it@rosell.dk">it@rosell.dk</a></p>                            </td>
+                        </tr>                        <tr>
+                            <th>since
+                            </th>
+                            <td><p>Class available since Release 2.0.0</p>                            </td>
+                        </tr>                    </table>
+                </aside>
+            </div>            <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_id" name="property_id" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$id</h3>
+                <pre class="signature">$id :string</pre>
+                <p><em></em></p>                <h4>Type</h4>string&mdash;The id of the option            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Options.Option.html"><div class="path-wrapper">\WebPConvert\Options\Option</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_defaultValue" name="property_defaultValue" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$defaultValue</h3>
+                <pre class="signature">$defaultValue :mixed</pre>
+                <p><em></em></p>                <h4>Type</h4>mixed&mdash;The default value of the option            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Options.Option.html"><div class="path-wrapper">\WebPConvert\Options\Option</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_value" name="property_value" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$value</h3>
+                <pre class="signature">$value :mixed</pre>
+                <p><em></em></p>                <h4>Type</h4>mixed&mdash;The value of the option            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Options.Option.html"><div class="path-wrapper">\WebPConvert\Options\Option</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_isExplicitlySet" name="property_isExplicitlySet" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$isExplicitlySet</h3>
+                <pre class="signature">$isExplicitlySet :boolean</pre>
+                <p><em></em></p>                <h4>Type</h4>boolean&mdash;Whether the value has been explicitly set            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Options.Option.html"><div class="path-wrapper">\WebPConvert\Options\Option</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>            <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(string  <span class="argument">$id</span>,mixed  <span class="argument">$defaultValue</span>): void</pre>
+                <p><em>Constructor.</em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td>string</td>
+                                <td>$id</td>
+                                <td><p>id of the option</p></td>
+                            </tr>                            <tr>
+                                <td>mixed</td>
+                                <td>$defaultValue</td>
+                                <td><p>default value for the option</p></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getId" name="method_getId" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">getId()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getId(): string</pre>
+                <p><em>Get Id.</em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+                    <h4>Returns</h4>string                        &mdash;<p>The id of the option</p>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Options.Option.html"><div class="path-wrapper">\WebPConvert\Options\Option</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDefaultValue" name="method_getDefaultValue" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">getDefaultValue()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDefaultValue(): mixed</pre>
+                <p><em>Get default value.</em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+                    <h4>Returns</h4>mixed                        &mdash;<p>The default value for the option</p>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Options.Option.html"><div class="path-wrapper">\WebPConvert\Options\Option</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getValue" name="method_getValue" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">getValue()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getValue(): mixed</pre>
+                <p><em>Get value, or default value if value has not been explicitly set.</em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+                    <h4>Returns</h4>mixed                        &mdash;<p>The value/default value</p>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Options.Option.html"><div class="path-wrapper">\WebPConvert\Options\Option</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_isValueExplicitlySet" name="method_isValueExplicitlySet" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">isValueExplicitlySet()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">isValueExplicitlySet(): boolean</pre>
+                <p><em>Get to know if value has been explicitly set.</em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+                    <h4>Returns</h4>boolean                        &mdash;<p>Whether or not the value has been set explicitly</p>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Options.Option.html"><div class="path-wrapper">\WebPConvert\Options\Option</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setValue" name="method_setValue" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">setValue()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setValue(mixed  <span class="argument">$value</span>): void</pre>
+                <p><em>Set value</em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td>mixed</td>
+                                <td>$value</td>
+                                <td><p>The value</p></td>
+                            </tr>                    </table>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Options.Option.html"><div class="path-wrapper">\WebPConvert\Options\Option</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_check" name="method_check" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">check()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">check(): void</pre>
+                <p><em>Check if the value is valid.</em></p><p>This base class does no checking, but this method is overridden by most other options.</p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getValueForPrint" name="method_getValueForPrint" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">getValueForPrint()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getValueForPrint()</pre>
+                <p><em></em></p>
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://C:/Users/Luiz/Downloads/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_checkType" name="method_checkType" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected">checkType()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">checkType(string  <span class="argument">$expectedType</span>): void</pre>
+                <p><em>Helpful function for checking type - used by subclasses.</em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td>string</td>
+                                <td>$expectedType</td>
+                                <td><p>The expected type, ie 'string'</p></td>
+                            </tr>                    </table>                    <h4>Throws</h4>
+                    <dl>                            <dt>\WebPConvert\Options\Exceptions\InvalidOptionTypeException</dt>
+                            <dd><p>If the type is invalid</p></dd>                    </dl>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/WebPConvert.Options.Option.html"><div class="path-wrapper">\WebPConvert\Options\Option</div></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>        </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">QualityOption.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/vendor\rosell-dk\webp-convert\src\Options\QualityOption.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">                            <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>                                        <li><a href="../namespaces/CoffeeCode.html">\CoffeeCode</a></li>                                        <li><a href="../namespaces/Composer.html">\Composer</a></li>                                        <li><a href="../namespaces/Example.html">\Example</a></li>                                        <li><a href="../namespaces/ImageMimeTypeGuesser.html">\ImageMimeTypeGuesser</a></li>                                        <li><a href="../namespaces/League.html">\League</a></li>                                        <li><a href="../namespaces/Source.html">\Source</a></li>                                        <li><a href="../namespaces/Test.html">\Test</a></li>                                        <li><a href="../namespaces/WebPConvert.html">\WebPConvert</a></li>                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">                            <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">                            <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    onJuly 16th, 2020 at 02:14.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

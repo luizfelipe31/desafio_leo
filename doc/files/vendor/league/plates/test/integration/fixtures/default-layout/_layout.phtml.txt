@@ -1,0 +1,4 @@
+<div>
+    <?=$v->section('content')?>
+</div>
+
