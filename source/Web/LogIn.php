@@ -4,7 +4,6 @@ namespace Source\Web;
 
 use Source\Core\Controller;
 use Source\Models\User;
-use Source\Support\Message;
 
 /**
  * Description of LogIn
@@ -32,10 +31,10 @@ class LogIn extends Controller {
         $user = User::UserLog();
 
        
-        if (!empty($data["email"]) && !empty($data["password"])) {
+        if (!empty($data["user_name"]) && !empty($data["password"])) {
 
             $user = new User();
-            $login = $user->login($data["email"], $data["password"], true, 1);
+            $login = $user->login($data["user_name"], $data["password"], true, 1);
 
             if ($login) {
                 $json["redirect"] = url("/");

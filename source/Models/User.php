@@ -5,7 +5,6 @@ namespace Source\Models;
 use CoffeeCode\DataLayer\DataLayer;
 use Source\Support\Message;
 use Source\Core\Session;
-use DateTime;
 use Exception;
 
 class User extends DataLayer {
@@ -14,7 +13,7 @@ class User extends DataLayer {
     protected $message;
 
     public function __construct() {
-        parent::__construct("users", ["first_name", "last_name", "email"]);
+        parent::__construct("users", ["first_name", "last_name", "user_name"]);
         $this->message = new Message();
     }
 
@@ -26,47 +25,14 @@ class User extends DataLayer {
 
         if (empty($this->id)) {
 
-            if (!$this->validateEmail() || !$this->validatePassword() || !parent::save()) {
+            if (!$this->validateUserName() || !$this->validatePassword() || !parent::save()) {
                 return false;
             }
 
-            $log = new Log();
-
-            $log->user = $this->UserLog()->id;
-            $log->ip = $_SERVER["REMOTE_ADDR"];
-            $log->description = "Inclusão do usuário " . $this->fullName();
-            $log->save();
             
         } else {
             if (!parent::save()) {
                 return false;
-            }
-
-            if ($this->status == 1 && $this->UserLog()) {
-                $log = new Log();
-
-                $log->user = $this->UserLog()->id;
-                $log->ip = $_SERVER["REMOTE_ADDR"];
-                $log->description = "Alteração do usuário " . $this->fullName();
-                $log->save();
-            }
-
-            if ($this->status == 2 && $this->UserLog()) {
-                $log = new Log();
-
-                $log->user = $this->UserLog()->id;
-                $log->ip = $_SERVER["REMOTE_ADDR"];
-                $log->description = "Exclusão do usuário " . $this->fullName();
-                $log->save();
-            }
-
-            if ($this->status == 3 && $this->UserLog()) {
-                $log = new Log();
-
-                $log->user = $this->UserLog()->id;
-                $log->ip = $_SERVER["REMOTE_ADDR"];
-                $log->description = "Bloqueio do usuário " . $this->fullName();
-                $log->save();
             }
         }
 
@@ -77,21 +43,21 @@ class User extends DataLayer {
      * Método para validação de E-mail ao incluir usuário
      * @return bool
      */
-    protected function validateEmail(): bool {
-        if (empty($this->email) || !filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-            $this->fail = new Exception("Informe um e-mail válido");
+    protected function validateUserName(): bool {
+        if (empty($this->user_name)) {
+            $this->fail = new Exception("Informe um nome de usuário");
             return false;
         }
 
-        $userByEmail = null;
+        $userName = null;
         if (!$this->id) {
-            $userByEmail = $this->find("email = :email and status!=2", "email={$this->email}")->count();
+            $userName = $this->find("user_name = :user_name and status!=2", "user_name={$this->user_name}")->count();
         } else {
-            $userByEmail = $this->find("email = :email AND id != :id  and status!=2", "email={$this->email}&id={$this->id}")->count();
+            $userName = $this->find("user_name = :user_name AND id != :id  and status!=2", "user_name={$this->user_name}&id={$this->id}")->count();
         }
 
-        if ($userByEmail) {
-            $this->fail = new Exception("E-mail já cadastrado");
+        if ($userName) {
+            $this->fail = new Exception("Nome de usuário já cadastrado");
             return false;
         }
         return true;
@@ -116,14 +82,14 @@ class User extends DataLayer {
     }
 
     /**
-     * Método para achar um usuário pelo e-mail
-     * @param string $email
+     * Método para achar um usuário pelo user name
+     * @param string $user_name
      * @param string $columns
      * @return \Source\Models\User|null
      */
-    public function findByEmail(string $email, string $columns = "*"): ?User {
+    public function findByUserName(string $user_name, string $columns = "*"): ?User {
 
-        $find = $this->find("email= :e and status=1", "e={$email}", $columns)->fetch();
+        $find = $this->find("user_name= :e and status=1", "e={$user_name}", $columns)->fetch();
 
         return $find;
     }

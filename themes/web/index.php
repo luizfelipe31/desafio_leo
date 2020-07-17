@@ -12,7 +12,7 @@ and open the template in the editor.
 
         <!-- main CSS File -->
         <link rel="stylesheet" href="<?= theme("/assets/css/style.css"); ?>"/>
-        
+
         <!-- slider CSS Files -->
         <link href="<?= theme("/assets/slider/animate.css/animate.min.css"); ?>" rel="stylesheet">
         <link href="<?= theme("/assets/slider/font-awesome/css/font-awesome.min.css"); ?>" rel="stylesheet">
@@ -21,7 +21,7 @@ and open the template in the editor.
         <link href="<?= theme("/assets/slider/style.css"); ?>" rel="stylesheet">
     </head>
     <body>
-
+        <!-- ======= Main Header Section ======= -->
         <header class="main_header">
             <div class="main_header_content">
                 <a href="#" class="logo">
@@ -34,19 +34,26 @@ and open the template in the editor.
             <div id="home" class="slider-area">
                 <div class="bend niceties preview-2">
                     <div id="ensign-nivoslider" class="slides">
-                        <img src="<?= image("image/2020/07/post.jpg", 800, 250); ?>" alt="" title="#slider-direction-1" />
-                        <img src="<?= image("image/2020/07/slider1.jpg", 800, 250); ?>" alt="" title="#slider-direction-2" />
-                        <img src="<?= image("image/2020/07/slider3.jpg", 800, 250); ?>" alt="" title="#slider-direction-3" />
+                        <img src="<?= image("image/2020/07/post.jpg", 800, 200); ?>" alt="" title="#slider-direction-1" />
+                        <img src="<?= image("image/2020/07/slider1.jpg", 800, 200); ?>" alt="" title="#slider-direction-2" />
+                        <img src="<?= image("image/2020/07/slider3.jpg", 800, 200); ?>" alt="" title="#slider-direction-3" />
                     </div>
 
                     <!-- direction 1 -->
                     <div id="slider-direction-1" class="slider-direction slider-one">
                         <div class="container">
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <div class="slider-content">
-
-                                    </div>
+                            <div class="slider-content">
+                                <div class="slider-course">
+                                    <header class="slider-title">
+                                        <h1>Lorem Ipsum</h1>
+                                    </header>
+                                    <article>
+                                        <p>Aenen Lacinia bibedum luna sed contetur cum
+                                            socias natake penaltis seltir magnis dis paturient montes
+                                            nascetus ridiculus mus.Morbi leo risos, porta actosert
+                                            latura ac, visibilit at ero.</p>
+                                        <button>Ver Curso</button>
+                                    </article>
                                 </div>
                             </div>
                         </div>
@@ -55,28 +62,45 @@ and open the template in the editor.
                     <!-- direction 2 -->
                     <div id="slider-direction-2" class="slider-direction slider-two">
                         <div class="container">
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-
+                            <div class="slider-content">
+                                <div class="slider-course">
+                                    <header class="slider-title">
+                                        <h1>Lorem Ipsum</h1>
+                                    </header>
+                                    <article>
+                                        <p>Aenen Lacinia bibedum luna sed contetur cum
+                                            socias natake penaltis seltir magnis dis paturient montes
+                                            nascetus ridiculus mus.Morbi leo risos, porta actosert
+                                            latura ac, visibilit at ero.</p>
+                                        <button>Ver Curso</button>
+                                    </article>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- direction 3 -->
-                    <div id="slider-direction-3" class="slider-direction slider-two">
+                    <div id="slider-direction-3" class="slider-direction slider-three">
                         <div class="container">
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <div class="slider-content">
-
-                                    </div>
+                            <div class="slider-content">
+                                <div class="slider-course">
+                                    <header class="slider-title">
+                                        <h1>Lorem Ipsum</h1>
+                                    </header>
+                                    <article>
+                                        <p>Aenen Lacinia bibedum luna sed contetur cum
+                                            socias natake penaltis seltir magnis dis paturient montes
+                                            nascetus ridiculus mus.Morbi leo risos, porta actosert
+                                            latura ac, visibilit at ero.</p>
+                                        <button>Ver Curso</button>
+                                    </article>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div><!-- End Slider -->
+            <!-- ======= Course Section ======= -->
             <section class="main_courses">
                 <header class="main_courses_header">
                     <h1>MEUS CURSOS</h1>
@@ -89,7 +113,7 @@ and open the template in the editor.
                     </a>
                     <p><a href="#" class="category">Pelentesque Melesiada</a></p>
                     <h2><a href="#" class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></h2>
-                    <button>Ver Curso</button>
+                    <button class="button-course">Ver Curso</button>
                 </article>
 
                 <article>
@@ -98,7 +122,7 @@ and open the template in the editor.
                     </a>
                     <p><a href="#" class="category">Pelentesque Melesiada</a></p>
                     <h2><a href="#" class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></h2>
-                    <button>Ver Curso</button>
+                    <button class="button-course">Ver Curso</button>
                 </article>
 
                 <article>
@@ -107,7 +131,7 @@ and open the template in the editor.
                     </a>
                     <p><a href="#" class="category">Pelentesque Melesiada</a></p>
                     <h2><a href="#" class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></h2>
-                    <button>Ver Curso</button>
+                    <button class="button-course">Ver Curso</button>
                 </article>
 
                 <article>
@@ -158,6 +182,7 @@ and open the template in the editor.
 
             </section>
         </main>
+        <!-- ======= main footer Section ======= -->
         <section class="main_footer">
             <header>
                 <h1><img src="<?= theme("/assets/images/logo_footer.png"); ?>" alt="LEO" title="LEO"></h1>
@@ -190,6 +215,7 @@ and open the template in the editor.
                 <h1><img src="<?= theme("/assets/images/icon_youtube.png"); ?>" alt="Youtube" title="Youtube"></h1>
             </article>
         </section>
+        <!-- ======= Main Footer Rights Section ======= -->
         <footer class="main_footer_rights">
             <p class="main_footer_rights_p">Copyright 2017 - All right reserved</p>
         </footer>
