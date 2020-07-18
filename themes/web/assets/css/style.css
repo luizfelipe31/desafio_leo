@@ -6,7 +6,7 @@
     font-size: 1em;
     font-family: 'Ubuntu', sans-serif;
 }
-/* MAIN TOP*/
+/* MAIN HEADER*/
 .main_header{
     width: 100%;
     background-color: #FFFFFF;
@@ -19,11 +19,86 @@
 }
 
 .main_header .main_header_content .logo{
-    flex-basis: 330px;
+    flex-basis: 200px;
     padding: 10px;
     padding-left: 35px;
-    width: 290px;
 }
+
+.main_header .main_header_content .main_header_search{
+    padding: 20px;
+    flex-basis: 850px;
+}
+
+.main_header_form {
+    width: 50%; 
+    position: relative; 
+    margin-left: 410px;
+}
+
+#text-search {
+    width: 100%; 
+    border-radius: 18px;
+    border: 1px solid #D3D3D3
+}
+
+#text-search,  #search {padding: 5px;}
+
+#search {
+    position: absolute;   
+    top: 0; 
+    right: 0;
+    border-radius: 0px 18px 18px 0px;
+    border: 1px solid #D3D3D3;
+    border-left: none;
+}
+
+#text-search:focus {
+    box-shadow: 0 0 0 0;
+    border: 1px solid #D3D3D3;
+    outline: 0;
+}
+#search:focus {
+    box-shadow: 0 0 0 0;
+    border: 1px solid #D3D3D3;
+    outline: 0;
+}
+.main_header_photo {
+    flex-basis: 80px;
+}
+.main_header_photo img{
+    border-radius: 50%;
+    border: 3px solid #D3D3D3;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.main_header_profile{
+    flex-basis: calc(100% - 1130px);
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+.main_header_login{
+    flex-basis: calc(100% - 1050px);
+}
+
+.main_header_login button{
+    background-color: #228B22;
+    color: #FFFFFF;
+    border-radius: 15px;
+    width:150px;
+    height:30px;
+    border: none;
+    margin-top: 20px;
+    margin-left: 25px;
+    cursor:pointer;
+}
+
+.main_header_login button:hover{
+    background-color: #006400;
+}
+
+
+/* SLIDER */
 .slider-content{
     background-color: rgba(0,0,0,0.5);
     margin-top: 50px;
@@ -235,18 +310,21 @@
     .slider-content{
         margin-top: 30px;
     }
+
 }
 
 @media (max-width: 58em){
     .slider-course article button{
         margin-top: 5px;
     }
+
 }
 
 @media (max-width: 56em){
     .slider-course article button{
         margin-top: 5px;
     }
+
 }
 
 @media (max-width: 54em){

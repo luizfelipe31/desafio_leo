@@ -27,6 +27,29 @@ and open the template in the editor.
                 <a href="#" class="logo">
                     <img src="<?= theme("/assets/images/logo.png"); ?>" alt="LEO" title="LEO">
                 </a>
+                <div class="main_header_search">
+                    <form action=" " method="post">
+                        <div class="main_header_form">  
+                            <input type="search" id="text-search" name="q" placeholder="Procurar cursos...">
+                            <button type="submit" id="search"><i class="fa fa-search"></i></button>
+                        </div>
+
+                    </form>
+                </div>
+                <?php if ($user == 1): ?>
+                    <div class="main_header_photo">
+                        <img src="<?= image("image/2020/07/user.png", 50, 50); ?>" alt="">
+                    </div>
+                    <div class="main_header_profile">
+                        <p>Seja bem-vindo,</p>
+                        <b>John Doe</b>
+                        <span class=" fa fa-angle-down"></span>
+                    </div>
+                <?php else: ?>
+                    <div class="main_header_login">
+                       <button>Log in</button>
+                    </div>
+                <?php endif; ?>
             </div>
         </header>
         <main>

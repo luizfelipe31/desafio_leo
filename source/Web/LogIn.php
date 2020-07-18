@@ -21,7 +21,9 @@ class LogIn extends Controller {
      */
     public function root(): void {
         
-        echo $this->view->render("index",[]);
+        echo $this->view->render("index",[
+            'user' => '1'
+        ]);
     }
 
     /**
@@ -46,7 +48,9 @@ class LogIn extends Controller {
             return;
         }
 
-        echo $this->view->render("index",[]);
+        echo $this->view->render("index",[
+            'user' => '1'
+        ]);
     }
 
 
