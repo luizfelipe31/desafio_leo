@@ -47,7 +47,7 @@ and open the template in the editor.
                     </div>
                 <?php else: ?>
                     <div class="main_header_login">
-                       <button>Log in</button>
+                        <button>Log in</button>
                     </div>
                 <?php endif; ?>
             </div>
@@ -213,11 +213,11 @@ and open the template in the editor.
 
             <article class="main_footer_our_pages">
                 <header>
-                    <h2 class="main_footer_our_pages_li">Maecenas faucibus mollis interdum. Morbi leo risus,porta ac consectertu ac, vestibulum at eros</h2>
+                    <h2>Maecenas faucibus mollis interdum. Morbi leo risus,porta ac consectertu ac, vestibulum at eros</h2>
                 </header>
             </article>
 
-            <article class="main_footer_contact">
+            <article class="main_footer_links">
                 <header>
                     <h2>//CONTATO</h2>
                 </header>
@@ -228,14 +228,13 @@ and open the template in the editor.
                 </ul>
             </article>
 
-            <article class="main_footer_media">
+            <article class="main_footer_about">
                 <header>
                     <h2>//REDES SOCIAIS</h2>
                 </header>
-
-                <h1><img src="<?= theme("/assets/images/icon_pinterest.png"); ?>" alt="Pinterest" title="Pinterest"></h1>
-                <h1><img src="<?= theme("/assets/images/icon_twitter.png"); ?>" alt="Twitter" title="Twitter"></h1>
-                <h1><img src="<?= theme("/assets/images/icon_youtube.png"); ?>" alt="Youtube" title="Youtube"></h1>
+                <img src="<?= theme("/assets/images/icon_twitter.png"); ?>" alt="Twitter" title="Twitter">
+                <img src="<?= theme("/assets/images/icon_youtube.png"); ?>" alt="Youtube" title="Youtube">
+                <img src="<?= theme("/assets/images/icon_pinterest.png"); ?>" alt="Pinterest" title="Pinterest">
             </article>
         </section>
         <!-- ======= Main Footer Rights Section ======= -->
