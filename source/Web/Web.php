@@ -57,7 +57,7 @@ class Web extends Controller {
             }
 
             if (!$userCreate->save()) {
-                $json["message"] =  $userCreate->fail()->getMessage();
+                $json["message"] = $this->message->error($userCreate->fail()->getMessage())->render();
                 echo json_encode($json);
                 return;
             }
@@ -126,7 +126,8 @@ class Web extends Controller {
             }
 
             if (!$userUpdate->save()) {
-                $json["message"] = $userUpdate->fail()->getMessage();
+
+                $json["message"] = $this->message->error($userUpdate->fail()->getMessage())->render();
                 echo json_encode($json);
                 return;
             }
