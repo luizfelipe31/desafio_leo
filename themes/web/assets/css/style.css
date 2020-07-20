@@ -164,6 +164,11 @@
 
 .article_add{
     border: none !important;
+    cursor:pointer
+}
+
+.article_add spam img {
+   height: 330px;
 }
 
 .main_courses article img{
@@ -367,6 +372,12 @@
         display: none;
         max-width: 0px;
         height: 0px;
+    }
+}
+
+@media (max-width: 42em){
+    .app_modal_box {
+        padding: 30px;
     }
 }
 

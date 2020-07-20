@@ -7,18 +7,19 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="icon" type="image/png" href="<?= theme("/assets/images/logo.png"); ?>"/>
+        <link rel="icon" type="image/png" href="<?= theme("/assets/images/logo.png", CONF_VIEW_THEME_WEB); ?>"/>
         <title><?= CONF_SITE_TITLE ?></title>
 
         <!-- main CSS File -->
-        <link rel="stylesheet" href="<?= theme("/assets/css/style.css"); ?>"/>
+        <link rel="stylesheet" href="<?= theme("/assets/css/style.css", CONF_VIEW_THEME_WEB); ?>"/>
+        <link rel="stylesheet" href="<?= theme("/assets/css/app.css", CONF_VIEW_THEME_WEB); ?>">
 
         <!-- slider CSS Files -->
-        <link href="<?= theme("/assets/slider/animate.css/animate.min.css"); ?>" rel="stylesheet">
-        <link href="<?= theme("/assets/slider/font-awesome/css/font-awesome.min.css"); ?>" rel="stylesheet">
-        <link href="<?= theme("/assets/slider/nivo-slider/css/nivo-slider.css"); ?>" rel="stylesheet">
-        <link href="<?= theme("/assets/slider/owl.carousel/assets/owl.carousel.min.css"); ?>" rel="stylesheet">
-        <link href="<?= theme("/assets/slider/style.css"); ?>" rel="stylesheet">
+        <link href="<?= theme("/assets/slider/animate.css/animate.min.css", CONF_VIEW_THEME_WEB); ?>" rel="stylesheet">
+        <link href="<?= theme("/assets/slider/font-awesome/css/font-awesome.min.css", CONF_VIEW_THEME_WEB); ?>" rel="stylesheet">
+        <link href="<?= theme("/assets/slider/nivo-slider/css/nivo-slider.css", CONF_VIEW_THEME_WEB); ?>" rel="stylesheet">
+        <link href="<?= theme("/assets/slider/owl.carousel/assets/owl.carousel.min.css", CONF_VIEW_THEME_WEB); ?>" rel="stylesheet">
+        <link href="<?= theme("/assets/slider/style.css", CONF_VIEW_THEME_WEB); ?>" rel="stylesheet">
     </head>
     <body>
         <!-- ======= Main Header Section ======= -->
@@ -194,12 +195,9 @@ and open the template in the editor.
                 </article>
 
                 <article class="article_add">
-                    <a href="#">
-                        <img src="<?= theme("/assets/images/add.png"); ?>" alt="Adicionar Curso" title="Adicionar Curso">
-                    </a>
-<!--                    <p><a href="#" class="category">Pelentesque Melesiada</a></p>
-                    <h2><a href="#" class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></h2>
-                    <button>Ver Curso</button>-->
+                    <spam data-modalopen=".app_modal_course">
+                        <img src="<?= image("image/2020/07/add.png", 999); ?>" alt="Adicionar Curso" title="Adicionar Curso">
+                    </spam>
                 </article>
 
 
@@ -243,10 +241,19 @@ and open the template in the editor.
         </footer>
     </body>
 </html>
+<div class="app">
+    <?= $v->insert("views/modals"); ?>
+</div>
 <!-- slider js Files -->
-<script src="<?= theme("/assets/js/jquery/jquery.min.js"); ?>"></script>
-<script src="<?= theme("/assets/slider/wow/wow.min.js"); ?>"></script>
-<script src="<?= theme("/assets/slider/nivo-slider/js/jquery.nivo.slider.js"); ?>"></script>
-<script src="<?= theme("/assets/slider/owl.carousel/owl.carousel.min.js"); ?>"></script>
-<script src="<?= theme("/assets/slider/main.js"); ?>"></script>
+<script src="<?= theme("/assets/js/jquery/jquery.min.js", CONF_VIEW_THEME_WEB); ?>"></script>
+<script src="<?= theme("/assets/js/jquery/jquery.form.js", CONF_VIEW_THEME_WEB); ?>"></script>
+<script src="<?= theme("/assets/js/jquery/jquery-ui.js", CONF_VIEW_THEME_WEB); ?>"></script>
+<script src="<?= theme("/assets/js/jquery/jquery.mask.js", CONF_VIEW_THEME_WEB); ?>"></script>
+<script src="<?= theme("/assets/slider/wow/wow.min.js", CONF_VIEW_THEME_WEB); ?>"></script>
+<script src="<?= theme("/assets/slider/nivo-slider/js/jquery.nivo.slider.js", CONF_VIEW_THEME_WEB); ?>"></script>
+<script src="<?= theme("/assets/slider/owl.carousel/owl.carousel.min.js", CONF_VIEW_THEME_WEB); ?>"></script>
+<script src="<?= theme("/assets/slider/main.js", CONF_VIEW_THEME_WEB); ?>"></script>
+<script src="<?= theme("/assets/js/tinymce/tinymce.min.js", CONF_VIEW_THEME_WEB); ?>"></script>
+<script src="<?= theme("/assets/js/scripts.js", CONF_VIEW_THEME_WEB); ?>"></script>
+
 
