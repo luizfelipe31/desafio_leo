@@ -21,7 +21,14 @@ and open the template in the editor.
         <link href="<?= theme("/assets/slider/owl.carousel/assets/owl.carousel.min.css", CONF_VIEW_THEME_WEB); ?>" rel="stylesheet">
         <link href="<?= theme("/assets/slider/style.css", CONF_VIEW_THEME_WEB); ?>" rel="stylesheet">
     </head>
+    <div class="ajax_load">
+        <div class="ajax_load_box">
+            <div class="ajax_load_box_circle"></div>
+            <p class="ajax_load_box_title">Aguarde, carregando...</p>
+        </div>
+    </div>
     <body>
+        <div class="ajax_response"><?= flash(); ?></div>
         <!-- ======= Main Header Section ======= -->
         <header class="main_header">
             <div class="main_header_content">
@@ -37,18 +44,22 @@ and open the template in the editor.
 
                     </form>
                 </div>
-                <?php if ($user == 1): ?>
-                    <div class="main_header_photo">
-                        <img src="<?= image("image/2020/07/user.png", 50, 50); ?>" alt="">
+                <?php if ($user_login): ?>
+                    <div class="main_header_photo" data-modalopen=".app_modal_user">
+                        <?php
+                        $photo = $user_login->photo;
+                        $userPhoto = ($photo ? image($user_login->photo, 50, 50) : image("image/2020/07/user.png", 50, 50));
+                        ?>
+                        <img src="<?= $userPhoto; ?>" alt="">
                     </div>
-                    <div class="main_header_profile">
+                    <div class="main_header_profile" data-modalopen=".app_modal_user">
                         <p>Seja bem-vindo,</p>
-                        <b>John Doe</b>
+                        <b><?= $user_login->first_name; ?></b>
                         <span class=" fa fa-angle-down"></span>
                     </div>
                 <?php else: ?>
                     <div class="main_header_login">
-                        <button>Log in</button>
+                        <button data-modalopen=".app_modal_login">Log in</button>
                     </div>
                 <?php endif; ?>
             </div>
@@ -195,7 +206,7 @@ and open the template in the editor.
                 </article>
 
                 <article class="article_add">
-                    <spam data-modalopen=".app_modal_course">
+                    <spam data-modalopen=".app_modal_add_course">
                         <img src="<?= image("image/2020/07/add.png", 999); ?>" alt="Adicionar Curso" title="Adicionar Curso">
                     </spam>
                 </article>

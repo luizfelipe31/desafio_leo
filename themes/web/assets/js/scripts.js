@@ -157,17 +157,19 @@ $(function () {
      * APP MODAL
      */
     $("[data-modalopen]").click(function (e) {
-
         var clicked = $(this);
         var modal = clicked.data("modalopen");
 
-        if (modal == ".app_modal_login") {
-
-        }
-        if (modal == ".app_modal_course") {
+        if (modal == ".app_modal_user_add") {
+            $(".app_modal_login").fadeOut(effecttime);
+       
+            $(".app_modal").fadeIn(effecttime).css("display", "flex");
+            $(modal).fadeIn(effecttime);
+        } else {
             $(".app_modal").fadeIn(effecttime).css("display", "flex");
             $(modal).fadeIn(effecttime);
         }
+
 
     });
     $("[data-modalclose]").click(function (e) {

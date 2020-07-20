@@ -101,18 +101,7 @@ class User extends DataLayer {
         return "{$this->first_name} {$this->last_name}";
     }
 
-    /**
-     * 
-     * @return string|null
-     */
-    public function photo(): ?string {
 
-        if ($this->photo && file_exists(__DIR__ . "/../../" . CONF_UPLOAD_DIR . "/{$this->photo}")) {
-            return $this->photo;
-        }
-
-        return null;
-    }
 
     /**
      * Método para entrar no sistema
@@ -122,27 +111,22 @@ class User extends DataLayer {
      * @param int $level
      * @return bool
      */
-    public function login(string $email, string $password, bool $save = false, int $level = 0): bool {
-
-        if (!is_email($email)) {
-            $this->fail = new Exception("O E-mail informado não é válido");
-            return false;
-        }
+    public function login(string $user_name, string $password, bool $save = false, int $level = 0): bool {
 
         if (!is_passwd($password)) {
             $this->fail = new Exception("A senha informada não é válida");
             return false;
         }
 
-        $user = $this->findByEmail($email);
+        $user = $this->findByUserName($user_name);
 
         if (!$user) {
-            $this->fail = new Exception("E-mail informado não está cadastrado");
+            $this->fail = new Exception("Usuário informado não está cadastrado");
             return false;
         }
 
         if ($user->status == 2) {
-            $this->fail = new Exception("E-mail informado não está cadastrado");
+            $this->fail = new Exception("Usuário informado não está cadastrado");
             return false;
         }
 
@@ -154,7 +138,7 @@ class User extends DataLayer {
 
         if (!passwd_verify($password, $user->password)) {
 
-            $request_limit = $this->request_limit($email);
+            $request_limit = $this->request_limit($user_name);
 
             if ($request_limit >= 5) {
                 $this->fail = new Exception("Você estourou limite de 5 tentativas, seu login foi bloqueado, acesse seu e-mail para desbloquear ou mude sua senha em 'Esqueceu a senha?'.");
@@ -171,10 +155,7 @@ class User extends DataLayer {
             $user->save();
         }
 
-        $user->error_attempt = null;
-        $user->error_date = null;
-        $user->save();
-
+   
         (new Session())->set("authUser", $user->id);
 
         return true;

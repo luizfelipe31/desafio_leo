@@ -20,9 +20,10 @@ class LogIn extends Controller {
      * Admin access redirect
      */
     public function root(): void {
+        $user = User::UserLog();
         
         echo $this->view->render("index",[
-            'user' => '1'
+            'user_login' => $user
         ]);
     }
 
@@ -32,7 +33,6 @@ class LogIn extends Controller {
     public function login(?array $data): void {
         $user = User::UserLog();
 
-       
         if (!empty($data["user_name"]) && !empty($data["password"])) {
 
             $user = new User();
@@ -49,9 +49,13 @@ class LogIn extends Controller {
         }
 
         echo $this->view->render("index",[
-            'user' => '1'
+            'user_login' => $user
         ]);
     }
 
-
+    public function logout(): void {
+        User::logout();
+        redirect("/");
+    }
+    
 }

@@ -64,6 +64,7 @@
 }
 .main_header_photo {
     flex-basis: 80px;
+    cursor:pointer;
 }
 .main_header_photo img{
     border-radius: 50%;
@@ -76,6 +77,7 @@
     flex-basis: calc(100% - 1130px);
     justify-content: flex-end;
     margin-top: 15px;
+    cursor:pointer;
 }
 .main_header_login{
     flex-basis: calc(100% - 1050px);

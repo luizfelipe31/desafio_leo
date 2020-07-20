@@ -14,6 +14,10 @@ $router = new Router(url(), ":");
 $router->namespace("Source\Web");
 $router->group(null);
 $router->get("/", "LogIn:root");
+$router->post("/login", "LogIn:login");
+$router->get("/logout", "LogIn:logout");
+$router->post("/update_profile", "Web:updateUser");
+$router->post("/add_profile", "Web:addUser");
 
 /**
  * ERRORS
