@@ -10,6 +10,8 @@ and open the template in the editor.
         <link rel="icon" type="image/png" href="<?= theme("/assets/images/logo.png", CONF_VIEW_THEME_WEB); ?>"/>
         <title><?= CONF_SITE_TITLE ?></title>
 
+        <?= csrf_input(); ?>
+
         <!-- main CSS File -->
         <link rel="stylesheet" href="<?= theme("/assets/css/style.css", CONF_VIEW_THEME_WEB); ?>"/>
         <link rel="stylesheet" href="<?= theme("/assets/css/app.css", CONF_VIEW_THEME_WEB); ?>">
@@ -69,8 +71,8 @@ and open the template in the editor.
             <div id="home" class="slider-area">
                 <div class="bend niceties preview-2">
                     <div id="ensign-nivoslider" class="slides">
-                        <img src="<?= image("image/2020/07/post.jpg", 800, 200); ?>" alt="" title="#slider-direction-1" />
-                        <img src="<?= image("image/2020/07/slider1.jpg", 800, 200); ?>" alt="" title="#slider-direction-2" />
+                        <img src="<?= image("image/2020/07/slider1.jpg", 800, 200); ?>" alt="" title="#slider-direction-1" />
+                        <img src="<?= image("image/2020/07/slider2.jpg", 800, 200); ?>" alt="" title="#slider-direction-2" />
                         <img src="<?= image("image/2020/07/slider3.jpg", 800, 200); ?>" alt="" title="#slider-direction-3" />
                     </div>
 
@@ -80,14 +82,11 @@ and open the template in the editor.
                             <div class="slider-content">
                                 <div class="slider-course">
                                     <header class="slider-title">
-                                        <h1>Lorem Ipsum</h1>
+                                        <h1><?=str_limit_chars($courses_headers1->title,25)?></h1>
                                     </header>
                                     <article>
-                                        <p>Aenen Lacinia bibedum luna sed contetur cum
-                                            socias natake penaltis seltir magnis dis paturient montes
-                                            nascetus ridiculus mus.Morbi leo risos, porta actosert
-                                            latura ac, visibilit at ero.</p>
-                                        <button>Ver Curso</button>
+                                        <p><?=str_limit_chars($courses_headers1->subtitle,150)?></p>
+                                        <button onclick="modal_header(<?=$courses_headers1->id?>)">Ver Curso</button>
                                     </article>
                                 </div>
                             </div>
@@ -100,14 +99,11 @@ and open the template in the editor.
                             <div class="slider-content">
                                 <div class="slider-course">
                                     <header class="slider-title">
-                                        <h1>Lorem Ipsum</h1>
+                                        <h1><?=str_limit_chars($courses_headers2->title,25)?></h1>
                                     </header>
                                     <article>
-                                        <p>Aenen Lacinia bibedum luna sed contetur cum
-                                            socias natake penaltis seltir magnis dis paturient montes
-                                            nascetus ridiculus mus.Morbi leo risos, porta actosert
-                                            latura ac, visibilit at ero.</p>
-                                        <button>Ver Curso</button>
+                                        <p><?=str_limit_chars($courses_headers2->subtitle,150)?></p>
+                                        <button onclick="modal_header(<?=$courses_headers2->id?>)">Ver Curso</button>
                                     </article>
                                 </div>
                             </div>
@@ -120,14 +116,11 @@ and open the template in the editor.
                             <div class="slider-content">
                                 <div class="slider-course">
                                     <header class="slider-title">
-                                        <h1>Lorem Ipsum</h1>
+                                        <h1><?=str_limit_chars($courses_headers3->title,25)?></h1>
                                     </header>
                                     <article>
-                                        <p>Aenen Lacinia bibedum luna sed contetur cum
-                                            socias natake penaltis seltir magnis dis paturient montes
-                                            nascetus ridiculus mus.Morbi leo risos, porta actosert
-                                            latura ac, visibilit at ero.</p>
-                                        <button>Ver Curso</button>
+                                        <p><?=str_limit_chars($courses_headers3->subtitle,150)?></p>
+                                        <button onclick="modal_header(<?=$courses_headers3->id?>)">Ver Curso</button>
                                     </article>
                                 </div>
                             </div>
@@ -138,75 +131,29 @@ and open the template in the editor.
             <!-- ======= Course Section ======= -->
             <section class="main_courses">
                 <header class="main_courses_header">
-                    <h1>MEUS CURSOS</h1>
+                    <?php $userCourse = ($user_login ? "MEUS CURSOS" : "CURSOS"); ?>
+                    <h1><?=$userCourse;?></h1>
                     <hr>
                 </header>
-
-                <article>
-                    <a href="#">
-                        <img src="<?= theme("/assets/images/post.jpg"); ?>" alt="Lorem Ipsum is simply" title="Lorem Ipsum is simply">
-                    </a>
-                    <p><a href="#" class="category">Pelentesque Melesiada</a></p>
-                    <h2><a href="#" class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></h2>
-                    <button class="button-course">Ver Curso</button>
-                </article>
-
-                <article>
-                    <a href="#">
-                        <img src="<?= theme("/assets/images/post.jpg"); ?>" alt="Lorem Ipsum is simply" title="Lorem Ipsum is simply">
-                    </a>
-                    <p><a href="#" class="category">Pelentesque Melesiada</a></p>
-                    <h2><a href="#" class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></h2>
-                    <button class="button-course">Ver Curso</button>
-                </article>
-
-                <article>
-                    <a href="#">
-                        <img src="<?= theme("/assets/images/post.jpg"); ?>" alt="Lorem Ipsum is simply" title="Lorem Ipsum is simply">
-                    </a>
-                    <p><a href="#" class="category">Pelentesque Melesiada</a></p>
-                    <h2><a href="#" class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></h2>
-                    <button class="button-course">Ver Curso</button>
-                </article>
-
-                <article>
-                    <a href="#">
-                        <img src="<?= theme("/assets/images/post.jpg"); ?>" alt="Lorem Ipsum is simply" title="Lorem Ipsum is simply">
-                    </a>
-                    <p><a href="#" class="category">Pelentesque Melesiada</a></p>
-                    <h2><a href="#" class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></h2>
-                    <button>Ver Curso</button>
-                </article>
-
-                <article>
-                    <a href="#">
-                        <img src="<?= theme("/assets/images/post.jpg"); ?>" alt="Lorem Ipsum is simply" title="Lorem Ipsum is simply">
-                    </a>
-                    <p><a href="#" class="category">Pelentesque Melesiada</a></p>
-                    <h2><a href="#" class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></h2>
-                    <button>Ver Curso</button>
-                </article>
-
-                <article>
-                    <a href="#">
-                        <img src="<?= theme("/assets/images/post.jpg"); ?>" alt="Lorem Ipsum is simply" title="Lorem Ipsum is simply">
-                    </a>
-                    <p><a href="#" class="category">Pelentesque Melesiada</a></p>
-                    <h2><a href="#" class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></h2>
-                    <button>Ver Curso</button>
-                </article>
-
-                <article>
-                    <a href="#">
-                        <img src="<?= theme("/assets/images/post.jpg"); ?>" alt="Lorem Ipsum is simply" title="Lorem Ipsum is simply">
-                    </a>
-                    <p><a href="#" class="category">Pelentesque Melesiada</a></p>
-                    <h2><a href="#" class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></h2>
-                    <button>Ver Curso</button>
-                </article>
-
+                <?php
+                if ($courses):
+                    foreach ($courses as $course):
+                        ?>
+                        <article>
+                            <a href="#">
+                                <img src="<?= image($course->photo, 1350,750); ?>" alt="<?= $course->title; ?>" title="<?= $course->title; ?>">
+                            </a>
+                            <p><a href="#" class="category"><?= str_limit_chars($course->title,25); ?></a></p>
+                            <h2><a href="#" class="title"><?= str_limit_chars($course->subtitle,90); ?></a></h2>
+                            <button class="button-course" data-modalopen=".app_modal_course" data-id="<?= $course->id; ?>">Ver Curso</button>
+                        </article>
+                        <?php
+                    endforeach;
+                endif;
+                ?>
+                
                 <article class="article_add">
-                    <spam data-modalopen=".app_modal_add_course">
+                    <spam <?php if ($user_login): ?> data-modalopen=".app_modal_add_course" <?php else: ?> onclick="javascript:alert('Necessário está logado para adicionar um curso novo')" <?php endif ?>>
                         <img src="<?= image("image/2020/07/add.png", 999); ?>" alt="Adicionar Curso" title="Adicionar Curso">
                     </spam>
                 </article>
@@ -253,18 +200,26 @@ and open the template in the editor.
     </body>
 </html>
 <div class="app">
-    <?= $v->insert("views/modals"); ?>
+<?= $v->insert("views/modals"); ?>
 </div>
-<!-- slider js Files -->
+<script>
+   var path = '<?php echo url(); ?>'
+</script>
+
+<!-- jquery -->
 <script src="<?= theme("/assets/js/jquery/jquery.min.js", CONF_VIEW_THEME_WEB); ?>"></script>
 <script src="<?= theme("/assets/js/jquery/jquery.form.js", CONF_VIEW_THEME_WEB); ?>"></script>
 <script src="<?= theme("/assets/js/jquery/jquery-ui.js", CONF_VIEW_THEME_WEB); ?>"></script>
 <script src="<?= theme("/assets/js/jquery/jquery.mask.js", CONF_VIEW_THEME_WEB); ?>"></script>
 <script src="<?= theme("/assets/slider/wow/wow.min.js", CONF_VIEW_THEME_WEB); ?>"></script>
+
+<!-- slider js Files -->
 <script src="<?= theme("/assets/slider/nivo-slider/js/jquery.nivo.slider.js", CONF_VIEW_THEME_WEB); ?>"></script>
 <script src="<?= theme("/assets/slider/owl.carousel/owl.carousel.min.js", CONF_VIEW_THEME_WEB); ?>"></script>
 <script src="<?= theme("/assets/slider/main.js", CONF_VIEW_THEME_WEB); ?>"></script>
 <script src="<?= theme("/assets/js/tinymce/tinymce.min.js", CONF_VIEW_THEME_WEB); ?>"></script>
+
+<!-- main js Files -->
 <script src="<?= theme("/assets/js/scripts.js", CONF_VIEW_THEME_WEB); ?>"></script>
 
 

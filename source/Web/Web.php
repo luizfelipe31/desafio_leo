@@ -5,6 +5,7 @@ namespace Source\Web;
 use Source\Core\Controller;
 use Source\Support\Pager;
 use Source\Models\User;
+use Source\Models\Course;
 use Source\Support\Upload;
 
 /**
@@ -18,6 +19,11 @@ class Web extends Controller {
         parent::__construct($router, CONF_VIEW_WEB);
     }
 
+    /**
+     * 
+     * @param array $data
+     * @return void
+     */
     public function addUser(?array $data): void {
         if (!empty($data['csrf'])) {
 
@@ -62,9 +68,9 @@ class Web extends Controller {
                 return;
             }
 
-           $user = new User();
-           $user->login($data->user_name, $data->password, true, 1);
-            
+            $user = new User();
+            $user->login($data->user_name, $data->password, true, 1);
+
             $this->message->success("Usuário cadastrado com sucesso...")->flash();
             echo json_encode(["reload" => true]);
             return;
@@ -79,11 +85,11 @@ class Web extends Controller {
     public function updateUser(?array $data): void {
         if (!empty($data['csrf'])) {
 
-            if ($_REQUEST && !csrf_verify($_REQUEST)) {
-                $json["message"] = $this->message->error("Erro ao enviar o formulário, atualize a página")->render();
-                echo json_encode($json);
-                return;
-            }
+//            if ($_REQUEST && !csrf_verify($_REQUEST)) {
+//                $json["message"] = $this->message->error("Erro ao enviar o formulário, atualize a página")->render();
+//                echo json_encode($json);
+//                return;
+//            }
 
             if (empty($data["first_name"]) || empty($data["last_name"]) || empty($data["user_name"])) {
                 $json["message"] = $this->message->error("Preencha todos os campos")->render();
@@ -136,6 +142,132 @@ class Web extends Controller {
             echo json_encode(["reload" => true]);
             return;
         }
+    }
+
+    /**
+     * 
+     * @param array $data
+     * @return void
+     */
+    public function addCourse(array $data): void {
+        if (!empty($data['csrf'])) {
+            if (empty($data["title"]) || empty($data["subtitle"]) || empty($_FILES["photo"])) {
+                $json["message"] = $this->message->error("Preencha todos os campos")->render();
+                echo json_encode($json);
+                return;
+            }
+
+            $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS);
+
+            $data = (object) $post;
+
+            $user = User::UserLog();
+
+            $courseCreate = new Course();
+            $courseCreate->title = $data->title;
+            $courseCreate->subtitle = $data->subtitle;
+            $courseCreate->status = 1;
+            $courseCreate->user = $user->id;
+
+            if (!empty($_FILES["photo"])) {
+                $files = $_FILES["photo"];
+                $upload = new Upload();
+                $image = $upload->image($files, $courseCreate->title, 600);
+
+                if (!$image) {
+                    $json["message"] = $upload->message()->render();
+                    echo json_encode($json);
+                    return;
+                }
+
+                $courseCreate->photo = $image;
+            }
+
+            if (!$courseCreate->save()) {
+                $json["message"] = $this->message->error($courseCreate->fail()->getMessage())->render();
+                echo json_encode($json);
+                return;
+            }
+
+            $this->message->success("Curso cadastrado com sucesso...")->flash();
+            echo json_encode(["reload" => true]);
+            return;
+        }
+    }
+
+    /**
+     * 
+     * @param array $data
+     * @return void
+     */
+    public function updateCourse(array $data): void {
+        if (!empty($data['csrf'])) {
+            if (empty($data["title"]) || empty($data["subtitle"])) {
+                $json["message"] = $this->message->error("Preencha todos os campos")->render();
+                echo json_encode($json);
+                return;
+            }
+
+            $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS);
+
+            $data = (object) $post;
+
+            $courseUpdate = (new Course())->findById($data->id);
+
+            if (!$courseUpdate) {
+                $this->message->error("Você tentou gerenciar um usuário que não existe")->flash();
+                echo json_encode(["redirect" => url("/")]);
+                return;
+            }
+
+            $courseUpdate->title = $data->title;
+            $courseUpdate->subtitle = $data->subtitle;
+            //upload photo
+            if (!empty($_FILES["photo"])) {
+                if ($courseUpdate->photo && file_exists(__DIR__ . "/../../../" . CONF_UPLOAD_DIR . "/{$courseUpdate->photo}")) {
+                    unlink(__DIR__ . "/../../../" . CONF_UPLOAD_DIR . "/{$courseUpdate->photo}");
+                }
+
+                $files = $_FILES["photo"];
+                $upload = new Upload();
+                $image = $upload->image($files, $courseUpdate->title, 600);
+
+                if (!$image) {
+                    $json["message"] = $upload->message()->render();
+                    echo json_encode($json);
+                    return;
+                }
+
+                $courseUpdate->photo = $image;
+            }
+
+            if (!$courseUpdate->save()) {
+
+                $json["message"] = $this->message->error($courseUpdate->fail()->getMessage())->render();
+                echo json_encode($json);
+                return;
+            }
+
+            $this->message->success("Curso atualizado com sucesso...")->flash();
+            echo json_encode(["reload" => true]);
+            return;
+        }
+    }
+
+    /*
+     * 
+     */
+
+    public function Course(array $id): void {
+
+        $data = filter_var_array($id, FILTER_SANITIZE_STRIPPED);
+
+        $result = new Course();
+        $result->id = $data["id"];
+        $json = $result->queryCourse();
+
+        echo json_encode($json);
+        return;
     }
 
     /**

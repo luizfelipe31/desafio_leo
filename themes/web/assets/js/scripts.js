@@ -1,6 +1,7 @@
 // JQUERY INIT
 
 $(function () {
+
     var effecttime = 200;
 
     var ajaxResponseBaseTime = 3;
@@ -162,13 +163,20 @@ $(function () {
 
         if (modal == ".app_modal_user_add") {
             $(".app_modal_login").fadeOut(effecttime);
-       
-            $(".app_modal").fadeIn(effecttime).css("display", "flex");
-            $(modal).fadeIn(effecttime);
-        } else {
-            $(".app_modal").fadeIn(effecttime).css("display", "flex");
-            $(modal).fadeIn(effecttime);
         }
+
+        if (modal == ".app_modal_course") {
+            $.getJSON(path + '/course/' + clicked.data("id"), function (data) {
+                $.each(data, function (i, obj) {
+                    $("#title").val(obj.title);
+                    $("#subtitle").val(obj.subtitle);
+                    $("#id").val(obj.id);
+                });
+            });
+        }
+
+        $(".app_modal").fadeIn(effecttime).css("display", "flex");
+        $(modal).fadeIn(effecttime);
 
 
     });
@@ -226,11 +234,25 @@ $(function () {
         }
     });
 
+
     // MAKS
 
     $(".mask-date").mask('00/00/0000');
     $(".mask-datetime").mask('00/00/0000 00:00');
 });
+
+function modal_header(id) {
+    var effecttime = 200;
+    $(".app_modal").fadeIn(effecttime).css("display", "flex");
+    $(".app_modal_course").fadeIn(effecttime);
+    $.getJSON(path + '/course/' + id, function (data) {
+        $.each(data, function (i, obj) {
+            $("#title").val(obj.title);
+            $("#subtitle").val(obj.subtitle);
+            $("#id").val(obj.id);
+        });
+    });
+}
 
 // TINYMCE INIT
 

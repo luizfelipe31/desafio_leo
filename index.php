@@ -13,11 +13,21 @@ $router = new Router(url(), ":");
 
 $router->namespace("Source\Web");
 $router->group(null);
+
+/*LOGIN*/
 $router->get("/", "LogIn:root");
 $router->post("/login", "LogIn:login");
 $router->get("/logout", "LogIn:logout");
+
+/*USER*/
 $router->post("/update_profile", "Web:updateUser");
 $router->post("/add_profile", "Web:addUser");
+
+/*COURSE*/
+$router->get("/buscar/{terms}", "Web:courseSearch");
+$router->post("/update_course", "Web:updateCourse");
+$router->post("/add_course", "Web:addCourse");
+$router->get("/course/{id}", "Web:Course");
 
 /**
  * ERRORS

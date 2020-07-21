@@ -4,6 +4,7 @@ namespace Source\Web;
 
 use Source\Core\Controller;
 use Source\Models\User;
+use Source\Models\Course;
 
 /**
  * Description of LogIn
@@ -21,9 +22,40 @@ class LogIn extends Controller {
      */
     public function root(): void {
         $user = User::UserLog();
-        
-        echo $this->view->render("index",[
-            'user_login' => $user
+
+        if ($user) {
+            $courses = (new Course())
+                    ->find("(user = :user ||  user=0)  AND status = '1'",
+                            "user={$user->id}")
+                    ->order("id")
+                    ->fetch(true);
+        } else {
+            $courses = (new Course())
+                    ->find("user=0  AND status = '1'")
+                    ->order("id")
+                    ->fetch(true);
+        }
+
+
+        $courses_headers1 = (new Course())
+                ->find("id=2")
+                ->fetch();
+
+        $courses_headers2 = (new Course())
+                ->find("id=3")
+                ->fetch();
+
+        $courses_headers3 = (new Course())
+                ->find("id=4")
+                ->fetch();
+
+  
+       echo $this->view->render("index", [
+            'user_login' => $user,
+            'courses' => $courses,
+            'courses_headers1' => $courses_headers1,
+            'courses_headers2' => $courses_headers2,
+            'courses_headers3' => $courses_headers3
         ]);
     }
 
@@ -48,7 +80,7 @@ class LogIn extends Controller {
             return;
         }
 
-        echo $this->view->render("index",[
+        echo $this->view->render("index", [
             'user_login' => $user
         ]);
     }
@@ -57,5 +89,5 @@ class LogIn extends Controller {
         User::logout();
         redirect("/");
     }
-    
+
 }

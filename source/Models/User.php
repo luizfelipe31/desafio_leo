@@ -31,7 +31,7 @@ class User extends DataLayer {
 
             
         } else {
-            if (!parent::save()) {
+            if (!$this->validateUserName() || !parent::save()) {
                 return false;
             }
         }
