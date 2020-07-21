@@ -4,6 +4,11 @@ $(function () {
 
     var effecttime = 200;
 
+    if ($("#access").val() == 0) {
+        $(".app_modal").fadeIn(effecttime).css("display", "flex");
+        $(".app_modal_beginning").fadeIn(effecttime);
+    }
+
     var ajaxResponseBaseTime = 3;
     var ajaxResponseRequestError = "<div class='message error icon-warning'>Desculpe mas não foi possível processar sua requisição...</div>";
 

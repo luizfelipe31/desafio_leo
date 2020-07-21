@@ -24,10 +24,11 @@ $router->post("/update_profile", "Web:updateUser");
 $router->post("/add_profile", "Web:addUser");
 
 /*COURSE*/
+$router->post("/buscar", "Web:courseSearch");
 $router->get("/buscar/{terms}", "Web:courseSearch");
 $router->post("/update_course", "Web:updateCourse");
 $router->post("/add_course", "Web:addCourse");
-$router->get("/course/{id}", "Web:Course");
+$router->get("/course/{id}", "Web:course");
 
 /**
  * ERRORS

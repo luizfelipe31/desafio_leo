@@ -5,6 +5,7 @@ namespace Source\Web;
 use Source\Core\Controller;
 use Source\Models\User;
 use Source\Models\Course;
+use Source\Models\Access;
 
 /**
  * Description of LogIn
@@ -22,7 +23,21 @@ class LogIn extends Controller {
      */
     public function root(): void {
         $user = User::UserLog();
-
+      
+        $access = (new Access())->find("ip = :ip",
+                            "ip={$_SERVER["REMOTE_ADDR"]}")->count();
+                            
+         if($access==0){
+            $count_access=0; 
+            
+            $createAccess = new Access();
+            $createAccess->ip = $_SERVER["REMOTE_ADDR"];
+            $createAccess->save();
+            
+         }else{
+            $count_access=1;  
+         }
+            
         if ($user) {
             $courses = (new Course())
                     ->find("(user = :user ||  user=0)  AND status = '1'",
@@ -55,7 +70,8 @@ class LogIn extends Controller {
             'courses' => $courses,
             'courses_headers1' => $courses_headers1,
             'courses_headers2' => $courses_headers2,
-            'courses_headers3' => $courses_headers3
+            'courses_headers3' => $courses_headers3,
+            'count_access' => $count_access
         ]);
     }
 

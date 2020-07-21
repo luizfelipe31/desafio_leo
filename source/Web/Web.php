@@ -168,7 +168,7 @@ class Web extends Controller {
             $courseCreate->subtitle = $data->subtitle;
             $courseCreate->status = 1;
             $courseCreate->user = $user->id;
-
+ 
             if (!empty($_FILES["photo"])) {
                 $files = $_FILES["photo"];
                 $upload = new Upload();
@@ -258,7 +258,7 @@ class Web extends Controller {
      * 
      */
 
-    public function Course(array $id): void {
+    public function course(array $id): void {
 
         $data = filter_var_array($id, FILTER_SANITIZE_STRIPPED);
 
@@ -268,6 +268,60 @@ class Web extends Controller {
 
         echo json_encode($json);
         return;
+    }
+
+    /**
+     * 
+     * @param array $data
+     * @return void
+     */
+    public function courseSearch(array $data): void {
+
+        $user = User::UserLog();
+
+        if (!empty($data["s"])) {
+            $search = str_search($data["s"]);
+            echo json_encode(["redirect" => url("/buscar/{$search}")]);
+            return;
+        }
+
+        if (empty($data["terms"])) {
+            echo json_encode(["redirect" => url("/")]);
+            return;
+        }
+
+        $search = filter_var($data["terms"], FILTER_SANITIZE_STRIPPED);
+
+        if ($user) {
+            $courseSearch = (new Course())->find("MATCH(title, subtitle) AGAINST(:s) AND (user = :user ||  user=0)  AND status = '1'",
+                            "user={$user->id}&s={$search}")->fetch(true);
+        } else {
+            $courseSearch = (new Course())->find("MATCH(title, subtitle) AGAINST(:s) AND user=0 AND status = '1'",
+                            "s={$search}")->fetch(true);
+        }
+
+        $courses_headers1 = (new Course())
+                ->find("id=2")
+                ->fetch();
+
+        $courses_headers2 = (new Course())
+                ->find("id=3")
+                ->fetch();
+
+        $courses_headers3 = (new Course())
+                ->find("id=4")
+                ->fetch();
+
+
+        echo $this->view->render("index", [
+            'user_login' => $user,
+            'courses' => $courseSearch,
+            'courses_headers1' => $courses_headers1,
+            'courses_headers2' => $courses_headers2,
+            'courses_headers3' => $courses_headers3,
+            'search' => $search,
+            'count_access' => 1
+        ]);
     }
 
     /**

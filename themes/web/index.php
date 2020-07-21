@@ -34,17 +34,16 @@ and open the template in the editor.
         <!-- ======= Main Header Section ======= -->
         <header class="main_header">
             <div class="main_header_content">
-                <a href="#" class="logo">
+                <a href="#" class="logo"><input type="hidden" id="access" value="<?=$count_access;?>" />
                     <img src="<?= theme("/assets/images/logo.png"); ?>" alt="LEO" title="LEO">
                 </a>
                 <div class="main_header_search">
-                    <form action=" " method="post">
-                        <div class="main_header_form">  
-                            <input type="search" id="text-search" name="q" placeholder="Procurar cursos...">
-                            <button type="submit" id="search"><i class="fa fa-search"></i></button>
+                        <div class="main_header_form"> 
+                            <form name="search" action="<?= url("/buscar"); ?>" method="post" enctype="multipart/form-data">
+                                <input type="search" id="text-search" name="s" <?php if(isset($search)):echo "value={$search}"; endif;?> placeholder="Procurar cursos...">
+                                <button type="submit" id="search"><i class="fa fa-search"></i></button>
+                            </form>
                         </div>
-
-                    </form>
                 </div>
                 <?php if ($user_login): ?>
                     <div class="main_header_photo" data-modalopen=".app_modal_user">
@@ -82,11 +81,11 @@ and open the template in the editor.
                             <div class="slider-content">
                                 <div class="slider-course">
                                     <header class="slider-title">
-                                        <h1><?=str_limit_chars($courses_headers1->title,25)?></h1>
+                                        <h1><?= str_limit_chars($courses_headers1->title, 25) ?></h1>
                                     </header>
                                     <article>
-                                        <p><?=str_limit_chars($courses_headers1->subtitle,150)?></p>
-                                        <button onclick="modal_header(<?=$courses_headers1->id?>)">Ver Curso</button>
+                                        <p><?= str_limit_chars($courses_headers1->subtitle, 150) ?></p>
+                                        <button onclick="modal_header(<?= $courses_headers1->id ?>)">Ver Curso</button>
                                     </article>
                                 </div>
                             </div>
@@ -99,11 +98,11 @@ and open the template in the editor.
                             <div class="slider-content">
                                 <div class="slider-course">
                                     <header class="slider-title">
-                                        <h1><?=str_limit_chars($courses_headers2->title,25)?></h1>
+                                        <h1><?= str_limit_chars($courses_headers2->title, 25) ?></h1>
                                     </header>
                                     <article>
-                                        <p><?=str_limit_chars($courses_headers2->subtitle,150)?></p>
-                                        <button onclick="modal_header(<?=$courses_headers2->id?>)">Ver Curso</button>
+                                        <p><?= str_limit_chars($courses_headers2->subtitle, 150) ?></p>
+                                        <button onclick="modal_header(<?= $courses_headers2->id ?>)">Ver Curso</button>
                                     </article>
                                 </div>
                             </div>
@@ -116,11 +115,11 @@ and open the template in the editor.
                             <div class="slider-content">
                                 <div class="slider-course">
                                     <header class="slider-title">
-                                        <h1><?=str_limit_chars($courses_headers3->title,25)?></h1>
+                                        <h1><?= str_limit_chars($courses_headers3->title, 25) ?></h1>
                                     </header>
                                     <article>
-                                        <p><?=str_limit_chars($courses_headers3->subtitle,150)?></p>
-                                        <button onclick="modal_header(<?=$courses_headers3->id?>)">Ver Curso</button>
+                                        <p><?= str_limit_chars($courses_headers3->subtitle, 150) ?></p>
+                                        <button onclick="modal_header(<?= $courses_headers3->id ?>)">Ver Curso</button>
                                     </article>
                                 </div>
                             </div>
@@ -132,7 +131,7 @@ and open the template in the editor.
             <section class="main_courses">
                 <header class="main_courses_header">
                     <?php $userCourse = ($user_login ? "MEUS CURSOS" : "CURSOS"); ?>
-                    <h1><?=$userCourse;?></h1>
+                    <h1><?= $userCourse; ?></h1>
                     <hr>
                 </header>
                 <?php
@@ -141,17 +140,17 @@ and open the template in the editor.
                         ?>
                         <article>
                             <a href="#">
-                                <img src="<?= image($course->photo, 1350,750); ?>" alt="<?= $course->title; ?>" title="<?= $course->title; ?>">
+                                <img src="<?= image($course->photo, 1350, 750); ?>" alt="<?= $course->title; ?>" title="<?= $course->title; ?>">
                             </a>
-                            <p><a href="#" class="category"><?= str_limit_chars($course->title,25); ?></a></p>
-                            <h2><a href="#" class="title"><?= str_limit_chars($course->subtitle,90); ?></a></h2>
+                            <p><a href="#" class="category"><?= str_limit_chars($course->title, 25); ?></a></p>
+                            <h2><a href="#" class="title"><?= str_limit_chars($course->subtitle, 90); ?></a></h2>
                             <button class="button-course" data-modalopen=".app_modal_course" data-id="<?= $course->id; ?>">Ver Curso</button>
                         </article>
                         <?php
                     endforeach;
                 endif;
                 ?>
-                
+
                 <article class="article_add">
                     <spam <?php if ($user_login): ?> data-modalopen=".app_modal_add_course" <?php else: ?> onclick="javascript:alert('Necessário está logado para adicionar um curso novo')" <?php endif ?>>
                         <img src="<?= image("image/2020/07/add.png", 999); ?>" alt="Adicionar Curso" title="Adicionar Curso">
@@ -200,10 +199,10 @@ and open the template in the editor.
     </body>
 </html>
 <div class="app">
-<?= $v->insert("views/modals"); ?>
+    <?= $v->insert("views/modals"); ?>
 </div>
 <script>
-   var path = '<?php echo url(); ?>'
+    var path = '<?php echo url(); ?>'
 </script>
 
 <!-- jquery -->
