@@ -2,6 +2,7 @@
     <form class="app_form" action="<?= url("/add_profile"); ?>" method="post">
         <?= csrf_input(); ?>
         <div class="app_formbox_photo">
+            <span class="field">Foto de Perfil:</span>
             <div><input data-image=".j_profile_image" type="file" class="radius"  name="photo"/></div>
         </div>
 

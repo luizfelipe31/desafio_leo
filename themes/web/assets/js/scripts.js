@@ -168,6 +168,7 @@ $(function () {
 
         if (modal == ".app_modal_user_add") {
             $(".app_modal_login").fadeOut(effecttime);
+            $(".app_modal_beginning").fadeOut(effecttime);
         }
 
         if (modal == ".app_modal_course") {
