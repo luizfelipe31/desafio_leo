@@ -4,9 +4,10 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html  itemscope itemtype="https://schema.org/WebSite">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="<?= theme("/assets/images/logo.png", CONF_VIEW_THEME_WEB); ?>"/>
         <title><?= CONF_SITE_TITLE ?></title>
 
@@ -14,7 +15,6 @@ and open the template in the editor.
 
         <!-- main CSS File -->
         <link rel="stylesheet" href="<?= theme("/assets/css/style.css", CONF_VIEW_THEME_WEB); ?>"/>
-        <link rel="stylesheet" href="<?= theme("/assets/css/app.css", CONF_VIEW_THEME_WEB); ?>">
 
         <!-- slider CSS Files -->
         <link href="<?= theme("/assets/slider/animate.css/animate.min.css", CONF_VIEW_THEME_WEB); ?>" rel="stylesheet">
@@ -143,7 +143,7 @@ and open the template in the editor.
                                 <img src="<?= image($course->photo, 1350, 750); ?>" alt="<?= $course->title; ?>" title="<?= $course->title; ?>">
                             </a>
                             <p><a href="#" class="category"><?= str_limit_chars($course->title, 25); ?></a></p>
-                            <h2><a href="#" class="title"><?= str_limit_chars($course->subtitle, 90); ?></a></h2>
+                            <h2><a href="#" class="title"><?= str_limit_chars($course->subtitle, 70); ?></a></h2>
                             <button class="button-course" data-modalopen=".app_modal_course" data-id="<?= $course->id; ?>">Ver Curso</button>
                         </article>
                         <?php

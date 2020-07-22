@@ -127,14 +127,6 @@
     manualAdvance: false,
   });
 
-  /*----------------------------
-   Scrollspy js
-  ------------------------------ */
-  var Body = $('body');
-  Body.scrollspy({
-    target: '.navbar-collapse',
-    offset: 80
-  });
 
 
   /*--------------------------

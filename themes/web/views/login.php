@@ -16,7 +16,7 @@
         </form>
 
         <footer>
-            <p><h3><a title="Cadastrar" data-modalopen=".app_modal_user_add">INSCREVA-SE</a></h3></p>
+            <p><h3><a title="Cadastrar" data-modalopen=".app_modal_user_add" style="cursor:pointer">INSCREVA-SE</a></h3></p>
         </footer>
     </article>
 </div>

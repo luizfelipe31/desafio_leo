@@ -3,7 +3,6 @@
 namespace Source\Web;
 
 use Source\Core\Controller;
-use Source\Support\Pager;
 use Source\Models\User;
 use Source\Models\Course;
 use Source\Support\Upload;
@@ -27,11 +26,6 @@ class Web extends Controller {
     public function addUser(?array $data): void {
         if (!empty($data['csrf'])) {
 
-            if ($_REQUEST && !csrf_verify($_REQUEST)) {
-                $json["message"] = $this->message->error("Erro ao enviar o formulário, atualize a página")->render();
-                echo json_encode($json);
-                return;
-            }
 
             if (empty($data["first_name"]) || empty($data["last_name"]) || empty($data["user_name"]) || empty($data["password"])) {
                 $json["message"] = $this->message->error("Preencha todos os campos")->render();

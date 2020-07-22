@@ -3,7 +3,7 @@
         <?= csrf_input(); ?>
         <input type="hidden" name="id" id="id" />
         <div class="app_formbox_photo">
-            <span class="field">Imagem:</span>
+            <span class="field">Mudar Imagem:</span>
             <div><input data-image=".j_profile_image" type="file" class="radius"  name="photo"/></div>
         </div>
 
